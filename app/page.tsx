@@ -3,12 +3,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div
-      className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-12 text-foreground sm:px-10"
-      //style={{ fontFamily: '"Times New Roman", Times, serif' }}
+      className="min-h-screen bg-background text-foreground"
       style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
     >
-      <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 bg-background">
-        <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
+      <main
+        className="flex min-h-screen w-full items-center bg-cover bg-center px-6 py-16 sm:px-10"
+        style={{ backgroundImage: 'url(/liquid-metal.png)' }}
+      >
+        <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-14 sm:flex-row sm:items-start lg:gap-24">
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/slackpfp.JPG"
@@ -52,7 +54,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left text-foreground">
+          <div className="flex max-w-4xl flex-1 -translate-y-8 flex-col items-start gap-6 text-left text-foreground sm:-translate-y-12">
             <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
               Hello, I'm Bianca Bensen
             </h1>
@@ -65,14 +67,18 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
-          <div className="flex flex-col items-center gap-4">
-            <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
-              My Education
-            </h1>
-          </div>
-        </section>
       </main>
+
+      <section className="bg-background px-6 py-20 text-foreground sm:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            My Education
+          </h2>
+          <p className="max-w-3xl text-left text-lg leading-8">
+            University of Washington, Seattle
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
