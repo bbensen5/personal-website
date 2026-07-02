@@ -65,13 +65,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
-          <div className="flex flex-col items-center gap-4">
-            <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
-              My Education
-            </h1>
-          </div>
-        </section>
       </main>
     </div>
   );
