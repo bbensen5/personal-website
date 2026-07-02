@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <div
       className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-12 text-foreground sm:px-10"
-      style={{ fontFamily: '"Times New Roman", Times, serif' }}
+      //style={{ fontFamily: '"Times New Roman", Times, serif' }}
+      style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
     >
       <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 bg-background">
         <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
@@ -62,6 +63,13 @@ export default function Home() {
               I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
               In my free time, I enjoy swimming and playing piano, especially classical music. 
             </p>
+          </div>
+        </section>
+        <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
+              My Education
+            </h1>
           </div>
         </section>
       </main>
