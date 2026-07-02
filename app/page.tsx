@@ -8,7 +8,7 @@ export default function Home() {
     >
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-0 px-0 bg-white dark:bg-black sm:items-start">
         <Image
-          className="dark:invert"
+          //className="dark:invert"
           src="/slackpfp.JPG"
           alt="Bianca's face"
           width={400}
@@ -50,13 +50,13 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              className="dark:invert"
+              //className="dark:invert"
               src="/github-logo.svg"
-              alt="Vercel logomark"
+              alt="GitHub Logo"
               width={16}
               height={16}
             />
-            My GitHub
+            Visit My GitHub
           </a>
           <a
             className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
