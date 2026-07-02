@@ -12,7 +12,7 @@ export default function Home() {
           src="/slackpfp.JPG"
           alt="Bianca's face"
           width={400}
-          height={400}
+          height={40}
           priority
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
