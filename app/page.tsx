@@ -6,8 +6,8 @@ export default function Home() {
       className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-12 text-foreground sm:px-10"
       style={{ fontFamily: '"Times New Roman", Times, serif' }}
     >
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 bg-background">
-        <section className="flex w-full flex-col items-center justify-center gap-10 sm:flex-row sm:items-center">
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 bg-background">
+        <section className="flex w-full flex-col items-center justify-center gap-14 sm:flex-row lg:gap-24 sm:items-center">
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/slackpfp.JPG"
@@ -16,7 +16,7 @@ export default function Home() {
               height={400}
               priority
             />
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-8">
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
                 href="https://github.com/bbensen5"
@@ -30,7 +30,7 @@ export default function Home() {
               </a>
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -41,7 +41,7 @@ export default function Home() {
               </a>
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
-                href="mailto:"
+                href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -51,7 +51,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-2xl flex-1 flex-col items-start gap-6 text-left text-foreground">
+          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left text-foreground">
             <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
               Hello, I'm Bianca Bensen
             </h1>
