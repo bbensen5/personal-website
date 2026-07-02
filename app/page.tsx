@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div
-      className="flex flex-col flex-1 items-center justify-center bg-zinc-50 dark:bg-black"
+      className="flex flex-col flex-1 items-start justify-center bg-zinc-50 dark:bg-black"
       style={{ fontFamily: '"Times New Roman", Times, serif' }}
     >
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-0 px-0 bg-white dark:bg-black sm:items-start">
@@ -17,29 +17,14 @@ export default function Home() {
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Greetings and salutations
-            My name is Bianca Bensen
+            Hello, I'm Bianca Bensen
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mystery
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
+            I am currently doing an internship at Moonveil AI and working on projects using the tools and AI they provide.
+            My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
+            I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier to explore.
+            In my free time, I enjoy swimming and playing piano, especially classical music. 
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
