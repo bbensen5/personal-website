@@ -10,7 +10,7 @@ export default function Home() {
         <Image
           //className="dark:invert"
           src="/slackpfp.JPG"
-          alt="Bianca's face"
+          alt="Bianca's fac"
           width={400}
           height={40}
           priority
