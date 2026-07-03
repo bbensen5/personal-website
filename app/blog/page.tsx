@@ -5,8 +5,10 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
+    <section className="bg-background px-6 py-20 text-foreground sm:px-10">
+        <h2 className="text-left text-3xl font-semibold tracking-tight">
+            My Blog
+        </h2>
     </section>
   )
 }
