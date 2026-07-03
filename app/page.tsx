@@ -6,10 +6,7 @@ export default function Home() {
       className="min-h-screen bg-background text-foreground"
       style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
     >
-      <main
-        className="flex min-h-screen w-full items-center bg-cover bg-center px-6 py-16 sm:px-10"
-        style={{ backgroundImage: 'url(/liquid-metal.png)' }}
-      >
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 bg-background">
         <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-14 sm:flex-row sm:items-start lg:gap-24">
           <div className="flex flex-col items-center gap-4">
             <Image
