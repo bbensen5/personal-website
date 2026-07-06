@@ -67,7 +67,7 @@ export default function Home() {
         </section>
       </main>
 
-      <section id="about" className={`${sectionClass} bg-background/15`}>
+      <section id="about" className={`${sectionClass} bg-foreground`}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
           <p className="max-w-3xl text-left text-lg font-light leading-8">
@@ -79,7 +79,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <hr></hr>
+      
       <section id="education" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Education</h2>
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <hr></hr>
+      
       <section id="experience" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Experience</h2>
@@ -150,7 +150,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <hr></hr>
+      
       <section id="projects" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Projects</h2>
