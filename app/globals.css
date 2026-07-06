@@ -4,7 +4,7 @@
   --background: #100d22;
   --foreground: #ffffff;
   --highlight: #7d96ff;
-  --offset: #333d67;
+  --offset: rgb(24, 25, 49);
 }
 
 @theme inline {

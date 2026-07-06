@@ -70,7 +70,7 @@ export default function Home() {
       <section id="about" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
-          <p className="max-w-3xl text-left text-lg font-light leading-8">
+          <p className="max-w-3xl text-left text-xl font-light leading-8">
             I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
             I am currently working on building my portfolio and having fun with creating personal projects.
             My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
@@ -131,7 +131,7 @@ export default function Home() {
             </article>
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                May 2023 – August 2023
+                May 2023 - August 2023
               </p>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
@@ -155,7 +155,7 @@ export default function Home() {
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Projects</h2>
           <div className="grid gap-8 sm:grid-cols-1">
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset">
+            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset hover:bg-highlight">
               <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
               <p className="text-lg font-light leading-8">
                 A research project analyzing how EV sales, GDP, and other factors contribute to air
