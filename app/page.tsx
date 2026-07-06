@@ -7,7 +7,7 @@ export default function Home() {
       style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
     >
       <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 bg-background">
-        <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-14 sm:flex-row sm:items-start lg:gap-24">
+        <section className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-14 px-6 py-12 sm:flex-row sm:items-center sm:px-10 lg:gap-24">
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/slackpfp.JPG"
@@ -51,7 +51,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-4xl flex-1 -translate-y-8 flex-col items-start gap-6 text-left text-foreground sm:-translate-y-12">
+          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 pt-4 text-left text-foreground sm:pt-8">
             <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
               Hello, I'm Bianca Bensen
             </h1>
@@ -65,6 +65,85 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <section
+        id="projects"
+        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            Projects
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
+              <h3 className="text-xl font-semibold">Project Title</h3>
+              <p className="text-lg leading-8">
+                Brief description of a project you built — what it does, the
+                tech stack, and what you learned.
+              </p>
+              <div className="mt-auto flex gap-4 text-sm">
+                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
+                  Live demo
+                </a>
+                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
+                  Source code
+                </a>
+              </div>
+            </article>
+            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
+              <h3 className="text-xl font-semibold">Another Project</h3>
+              <p className="text-lg leading-8">
+                Add another project here — personal apps, class work, hackathon
+                builds, or anything you want to highlight.
+              </p>
+              <div className="mt-auto flex gap-4 text-sm">
+                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
+                  Live demo
+                </a>
+                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
+                  Source code
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experience"
+        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            Experience
+          </h2>
+          <div className="flex flex-col gap-8">
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">Role Title</h3>
+                <p className="text-base text-foreground/70">Summer 2025</p>
+              </div>
+              <p className="text-lg font-medium">Company or Organization</p>
+              <p className="max-w-3xl text-lg leading-8">
+                Describe what you worked on, skills you used, and impact you
+                had. Replace this with internships, research, or other relevant
+                experience.
+              </p>
+            </article>
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">Another Role</h3>
+                <p className="text-base text-foreground/70">2024 – Present</p>
+              </div>
+              <p className="text-lg font-medium">Organization Name</p>
+              <p className="max-w-3xl text-lg leading-8">
+                Add clubs, volunteer work, tutoring, or part-time jobs that
+                show your skills and interests.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-background px-6 py-20 text-foreground sm:px-10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">

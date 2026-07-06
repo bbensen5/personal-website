@@ -14,6 +14,6 @@ export default function Page() {
             University of Washington, Seattle
           </p>
         </div>
-      </section>
+    </section>
   )
 }
