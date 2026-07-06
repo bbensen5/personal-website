@@ -66,8 +66,8 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <hr></hr>
-      <section id="about" className={sectionClass}>
+
+      <section id="about" className={`${sectionClass} bg-background/15`}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
           <p className="max-w-3xl text-left text-lg font-light leading-8">
