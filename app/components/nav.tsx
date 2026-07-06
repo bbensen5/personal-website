@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-foreground/10 bg-background/95 backdrop-blur-sm">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-center px-6 py-4 tracking-tight"
+        className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4 font-light tracking-wide"
         id="nav"
       >
         <div className="flex flex-row flex-wrap items-center justify-center gap-1">
