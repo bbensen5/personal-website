@@ -157,7 +157,7 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2">
             <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
               <h3 className="text-xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
-              <p className="text-lg font-light leading-8">
+              <p className="text-lg font-light leading-5">
                 A research project analyzing how EV sales, GDP, and other factors contribute to air
                 pollution and CO2 emissions in different countries around the globe. I focused on finding
                 relevant data sets and normalizing them to be easier to work with. I also used BeautifulSoup for webscraping to extract
