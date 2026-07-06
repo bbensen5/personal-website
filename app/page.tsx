@@ -55,16 +55,104 @@ export default function Home() {
             <h1 className="text-3xl font-semibold leading-10 tracking-tight text-foreground">
               Hello, I'm Bianca Bensen
             </h1>
-            <p className="text-lg leading-8 text-foreground">
-              I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
-              I am currently working on building my portfolio and having fun with creating personal projects.
-              My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
-              I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
-              In my free time, I enjoy swimming and playing piano, especially classical music. 
-            </p>
           </div>
         </section>
       </main>
+
+      <section
+        id="about"
+        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            About
+          </h2>
+          <p className="max-w-3xl text-left text-lg leading-8">
+            I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
+            I am currently working on building my portfolio and having fun with creating personal projects.
+            My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
+            I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
+            In my free time, I enjoy swimming and playing piano, especially classical music.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="education"
+        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            Education
+          </h2>
+          <div className="flex flex-col gap-8">
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">
+                  B.S. in Computer Science
+                </h3>
+                <p className="text-base text-foreground/70">Expected 2029</p>
+              </div>
+              <p className="text-lg font-medium">
+                University of Washington, Seattle
+              </p>
+              <p className="max-w-3xl text-lg leading-8">
+                Relevant coursework: Foundations of Computing, Intermediate
+                Data Programming, Hardware/Software Interface
+              </p>
+            </article>
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">High School Diploma</h3>
+                <p className="text-base text-foreground/70">2021 – 2025</p>
+              </div>
+              <p className="text-lg font-medium">Woodinville High School</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experience"
+        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
+          <h2 className="text-left text-3xl font-semibold tracking-tight">
+            Experience
+          </h2>
+          <div className="flex flex-col gap-8">
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">Volunteer</h3>
+                <p className="text-base text-foreground/70">June 2021 – September 2024</p>
+              </div>
+              <p className="text-lg font-medium">Woodinville Farmers Market</p>
+              <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg leading-8">
+                <li>Transferred and unloaded supplies for vendors</li>
+                <li>Set up tents, booths, and flags</li>
+                <li>Managed the information booth and kids&apos; booth</li>
+                <li>Set up games for children and assisted them with activities</li>
+              </ul>
+            </article>
+            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="text-xl font-semibold">Swim Instructor &amp; Lifeguard</h3>
+                <p className="text-base text-foreground/70">May 2023 – August 2023</p>
+              </div>
+              <p className="text-lg font-medium">Gold&apos;s Gym, Woodinville</p>
+              <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg leading-8">
+                <li>
+                  Taught swim lessons in small groups for kids ages 5–13 and
+                  worked one-on-one with them to improve their swimming abilities
+                  and technique
+                </li>
+                <li>Assessed students and wrote evaluation reports</li>
+                <li>Conducted routine maintenance checks on the pool</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section
         id="projects"
@@ -106,53 +194,6 @@ export default function Home() {
               </div>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="experience"
-        className="scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10"
-      >
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
-          <h2 className="text-left text-3xl font-semibold tracking-tight">
-            Experience
-          </h2>
-          <div className="flex flex-col gap-8">
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-semibold">Role Title</h3>
-                <p className="text-base text-foreground/70">Summer 2025</p>
-              </div>
-              <p className="text-lg font-medium">Company or Organization</p>
-              <p className="max-w-3xl text-lg leading-8">
-                Describe what you worked on, skills you used, and impact you
-                had. Replace this with internships, research, or other relevant
-                experience.
-              </p>
-            </article>
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-semibold">Another Role</h3>
-                <p className="text-base text-foreground/70">2024 – Present</p>
-              </div>
-              <p className="text-lg font-medium">Organization Name</p>
-              <p className="max-w-3xl text-lg leading-8">
-                Add clubs, volunteer work, tutoring, or part-time jobs that
-                show your skills and interests.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-background px-6 py-20 text-foreground sm:px-10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
-          <h2 className="text-left text-3xl font-semibold tracking-tight">
-            My Education
-          </h2>
-          <p className="max-w-3xl text-left text-lg leading-8">
-            University of Washington, Seattle
-          </p>
         </div>
       </section>
     </div>
