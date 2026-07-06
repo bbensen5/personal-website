@@ -57,7 +57,7 @@ export default function Home() {
           </div>
           <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 pt-4 text-left sm:pt-8">
             <h1 className="text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Hello, I&apos;m Bianca Bensen
+              Hello, I'm Bianca Bensen
             </h1>
             <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/80 sm:text-2xl">
               Computer Science student at the University of Washington, building
@@ -71,7 +71,7 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
           <p className="max-w-3xl text-left text-lg font-light leading-8">
-            I&apos;m a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
+            I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
             I am currently working on building my portfolio and having fun with creating personal projects.
             My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
             I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
@@ -124,7 +124,7 @@ export default function Home() {
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-8">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
-                  <li>Managed the information booth and kids&apos; booth</li>
+                  <li>Managed the information booth and kids booth</li>
                   <li>Set up games for children and assisted them with activities</li>
                 </ul>
               </div>
@@ -134,11 +134,11 @@ export default function Home() {
                 May 2023 – August 2023
               </p>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-medium">Swim Instructor &amp; Lifeguard</h3>
-                <p className="text-lg font-normal">Gold&apos;s Gym, Woodinville</p>
+                <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
+                <p className="text-lg font-normal">Gold's Gym, Woodinville</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-8">
                   <li>
-                    Taught swim lessons in small groups for kids ages 5–13 and
+                    Taught swim lessons in small groups for kids ages 5-13 and
                     worked one-on-one with them to improve their swimming abilities
                     and technique
                   </li>
@@ -156,21 +156,26 @@ export default function Home() {
           <h2 className={headingClass}>Projects</h2>
           <div className="grid gap-8 sm:grid-cols-2">
             <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
-              <h3 className="text-xl font-medium">Project Title</h3>
+              <h3 className="text-xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
               <p className="text-lg font-light leading-8">
-                Brief description of a project you built — what it does, the
-                tech stack, and what you learned.
+                A research project analyzing how EV sales, GDP, and other factors contribute to air
+                pollution and CO2 emissions in different countries around the globe. I focused on finding
+                relevant data sets and normalizing them to be easier to work with. I also used BeautifulSoup for webscraping to extract
+                data when downloading data sets was not available. I created different kinds of graphs and maps to
+                show the relationships and trends between EVs and CO2 across varying countries.
+                The main libraries used for these graphs were Pandas, GeoPandas, and MatPlotLib.
               </p>
               <div className="mt-auto flex gap-4 text-sm font-normal">
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
+                {/* <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
                   Live demo
                 </a>
                 <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
                   Source code
-                </a>
+                </a> */}
+                <p>Python</p>
               </div>
             </article>
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
+            {/* <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
               <h3 className="text-xl font-medium">Another Project</h3>
               <p className="text-lg font-light leading-8">
                 Add another project here — personal apps, class work, hackathon
@@ -184,7 +189,7 @@ export default function Home() {
                   Source code
                 </a>
               </div>
-            </article>
+            </article> */}
           </div>
         </div>
       </section>
