@@ -116,7 +116,7 @@ export default function Home() {
           <div className="flex flex-col gap-16 lg:gap-20">
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                June 2021 - September 2024
+                June 2021 - Sept 2024
               </p>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Volunteer</h3>
@@ -131,7 +131,7 @@ export default function Home() {
             </article>
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                May 2023 - August 2023
+                May 2023 - Aug 2023
               </p>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
