@@ -155,7 +155,7 @@ export default function Home() {
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Projects</h2>
           <div className="grid gap-8 sm:grid-cols-1">
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
+            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset">
               <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
               <p className="text-lg font-light leading-8">
                 A research project analyzing how EV sales, GDP, and other factors contribute to air
