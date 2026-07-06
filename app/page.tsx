@@ -5,7 +5,7 @@ const sectionClass =
 const containerClass =
   "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
-  "text-left text-4xl font-medium tracking-tight text-highlight";
+  "text-left text-5xl font-medium tracking-tight text-highlight";
 
 export default function Home() {
   return (
