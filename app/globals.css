@@ -4,7 +4,8 @@
   --background: #100d22;
   --foreground: #ffffff;
   --highlight: #7d96ff;
-  --offset: rgb(24, 25, 49);
+  --offset: #181931;
+  --accent1: #465694;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-highlight: var(--highlight);
   --color-offset: var(--offset);
+  --color-accent1: var(--accent1);
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
