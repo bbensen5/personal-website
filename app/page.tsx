@@ -22,7 +22,7 @@ export default function Home() {
             />
             <div className="flex items-center gap-8">
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
                 href="https://github.com/bbensen5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
                 href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -44,7 +44,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
                 href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
@@ -155,7 +155,7 @@ export default function Home() {
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Projects</h2>
           <div className="grid gap-8 sm:grid-cols-1">
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset transition-all hover:bg-accent1">
+            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset">
               <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
               <p className="text-lg font-light leading-8">
                 A research project analyzing how EV sales, GDP, and other factors contribute to air
