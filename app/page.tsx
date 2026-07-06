@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const sectionClass =
-  "scroll-mt-24 bg-background py-28 text-foreground sm:py-32 lg:py-36";
+  "scroll-mt-24 bg-background py-16 text-foreground sm:py-16 lg:py-16";
 const containerClass =
   "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
