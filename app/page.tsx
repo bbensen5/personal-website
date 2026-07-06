@@ -5,7 +5,7 @@ const sectionClass =
 const containerClass =
   "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
-  "text-left text-3xl font-medium tracking-tight";
+  "text-left text-4xl font-medium tracking-tight";
 
 export default function Home() {
   return (
@@ -116,12 +116,12 @@ export default function Home() {
           <div className="flex flex-col gap-16 lg:gap-20">
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                June 2021 – September 2024
+                June 2021 - September 2024
               </p>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Volunteer</h3>
                 <p className="text-lg font-normal">Woodinville Farmers Market</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-8">
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
                   <li>Managed the information booth and kids booth</li>
@@ -136,7 +136,7 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
                 <p className="text-lg font-normal">Gold's Gym, Woodinville</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-8">
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
                     worked one-on-one with them to improve their swimming abilities
@@ -154,10 +154,10 @@ export default function Home() {
       <section id="projects" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Projects</h2>
-          <div className="grid gap-8 sm:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-1">
             <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
-              <h3 className="text-xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
-              <p className="text-lg font-light leading-5">
+              <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
+              <p className="text-lg font-light leading-8">
                 A research project analyzing how EV sales, GDP, and other factors contribute to air
                 pollution and CO2 emissions in different countries around the globe. I focused on finding
                 relevant data sets and normalizing them to be easier to work with. I also used BeautifulSoup for webscraping to extract
