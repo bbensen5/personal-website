@@ -70,9 +70,9 @@ export default function Home() {
       <section id="about" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
-          <p className="max-w-3xl text-left text-xl font-light leading-8">
+          <p className="max-w-5xl text-left text-xl font-light leading-8">
             I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
-            I am currently working on building my portfolio and having fun with creating personal projects.
+            I have several years of experience with Java and Python and am currently working on building my portfolio and having fun with creating personal projects.
             My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
             I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
             In my free time, I enjoy swimming and playing piano, especially classical music.
