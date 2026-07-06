@@ -66,8 +66,8 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <section id="about" className={`${sectionClass} bg-foreground`}>
+    
+      <section id="about" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
           <p className="max-w-3xl text-left text-lg font-light leading-8">
