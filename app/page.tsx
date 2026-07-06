@@ -56,7 +56,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 pt-4 text-left sm:pt-8">
-            <h1 className="text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl text-highlight">
               Hello, I'm Bianca Bensen
             </h1>
             <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/80 sm:text-2xl">
