@@ -3,7 +3,9 @@ import Image from "next/image";
 const sectionClass =
   "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
 const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
-const headingClass = "text-left text-3xl font-medium tracking-tight text-highlight sm:text-4xl";
+const headingClass =
+  "font-[family-name:var(--font-display)] text-left text-3xl font-bold tracking-tight text-highlight sm:text-4xl";
+const subtitleClass = "max-w-2xl text-sm font-light leading-6 text-foreground/65";
 const cardClass =
   "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
 
@@ -140,7 +142,10 @@ export default function Home() {
 
       <section id="about" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
-          <h2 className={headingClass}>About</h2>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>About</h2>
+            <p className={subtitleClass}>Add a short subtitle about who you are here.</p>
+          </div>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
             <p className="text-left text-lg font-light leading-8 text-foreground/85">
               I&apos;m a second year student at the University of Washington in
@@ -151,7 +156,7 @@ export default function Home() {
               job. In my free time, I enjoy swimming and playing piano,
               especially classical music.
             </p>
-            <article className={cardClass}>
+            <article className={`${cardClass} lg:-translate-y-4`}>
               <h3 className="mb-5 text-xl font-medium text-highlight">Education</h3>
               <dl className="grid gap-4 text-sm">
                 <div>
@@ -182,17 +187,20 @@ export default function Home() {
 
       <section id="skills" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Skills</h2>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Skills</h2>
+            <p className={subtitleClass}>Add a short subtitle about your tools and strengths here.</p>
+          </div>
+          <div className="grid max-w-5xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {skills.map((skill) => (
               <article
                 key={skill}
-                className="flex aspect-square flex-col items-center justify-center gap-5 rounded-lg border border-foreground/15 bg-offset p-5 text-center transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-xs text-foreground/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-[0.65rem] text-foreground/50">
                   Logo
                 </div>
-                <h3 className="text-lg font-medium">{skill}</h3>
+                <h3 className="text-sm font-medium">{skill}</h3>
               </article>
             ))}
           </div>
@@ -201,7 +209,10 @@ export default function Home() {
 
       <section id="projects" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Projects</h2>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Projects</h2>
+            <p className={subtitleClass}>Add a short subtitle about what you have built here.</p>
+          </div>
           <div className="grid gap-8 lg:grid-cols-3">
             {projects.map((project) => (
               <article key={project.title} className={`${cardClass} overflow-hidden p-0`}>
@@ -238,7 +249,10 @@ export default function Home() {
 
       <section id="experience" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Experience</h2>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Experience</h2>
+            <p className={subtitleClass}>Add a short subtitle about your work and activities here.</p>
+          </div>
           <div className="flex flex-col gap-16 lg:gap-20">
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
@@ -279,7 +293,10 @@ export default function Home() {
 
       <section id="contact" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
-          <h2 className={headingClass}>Contact</h2>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Contact</h2>
+            <p className={subtitleClass}>Add a short subtitle inviting people to reach out here.</p>
+          </div>
           <p className="max-w-3xl text-lg font-light leading-8 text-foreground/85">
             I&apos;m open to internships, learning opportunities, collaborations, or just chatting.
           </p>
