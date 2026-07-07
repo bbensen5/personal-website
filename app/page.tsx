@@ -197,13 +197,13 @@ export default function Home() {
                 key={skill.name}
                 className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-background/40 p-2">
+                <div className="flex h-16 w-16 items-center justify-center">
                   <Image
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    width={40}
-                    height={40}
-                    className="max-h-full max-w-full object-contain"
+                    width={64}
+                    height={64}
+                    className="max-h-full max-w-full object-contain brightness-0 invert"
                   />
                 </div>
                 <h3 className="text-sm font-medium">{skill.name}</h3>
@@ -362,8 +362,11 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
-                    Icon
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M4 6h16v12H4z" />
+                      <path d="m4 7 8 6 8-6" />
+                    </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground/55">Email</span>
@@ -376,14 +379,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-background/40 p-1.5">
-                    <Image
-                      src="/github-logo.svg"
-                      alt="GitHub logo"
-                      width={22}
-                      height={22}
-                      className="max-h-full max-w-full object-contain"
-                    />
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.71 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.96c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.14 10.14 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                    </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground/55">GitHub</span>
@@ -398,14 +397,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-background/40 p-1.5">
-                    <Image
-                      src="/linkedin-logo.png"
-                      alt="LinkedIn logo"
-                      width={22}
-                      height={22}
-                      className="max-h-full max-w-full object-contain"
-                    />
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                      <path d="M6.94 8.75H3.62v11.13h3.32V8.75ZM5.28 4.12a1.92 1.92 0 1 0 0 3.84 1.92 1.92 0 0 0 0-3.84ZM20.38 13.79c0-3.05-1.63-5.02-4.29-5.02-1.78 0-2.58.98-3.02 1.67V8.75H9.88v11.13h3.32v-5.5c0-1.45.28-2.86 2.07-2.86 1.77 0 1.79 1.66 1.79 2.95v5.41h3.32v-6.09Z" />
+                    </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground/55">LinkedIn</span>
