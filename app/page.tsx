@@ -1,28 +1,86 @@
 import Image from "next/image";
 
 const sectionClass =
-  "scroll-mt-24 bg-background py-28 text-foreground sm:py-32 lg:py-36";
-const containerClass =
-  "mx-auto flex w-full max-w-6xl flex-col";
+  "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
+const aboutSectionClass =
+  "scroll-mt-24 bg-background px-6 pt-20 pb-10 text-foreground sm:px-10 lg:pt-24 lg:pb-12";
+const skillsSectionClass =
+  "scroll-mt-24 bg-background px-6 pt-10 pb-20 text-foreground sm:px-10 lg:pt-12 lg:pb-24";
+const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
-  "text-left text-5xl font-medium tracking-tight text-highlight";
+  "font-[family-name:var(--font-display)] text-left text-3xl font-bold tracking-tight text-highlight sm:text-4xl";
+const subtitleClass = "max-w-2xl text-sm font-light leading-6 text-foreground/65";
+const cardClass =
+  "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
+
+const skills = [
+  { name: "Java", logo: "/java-logo.svg" },
+  { name: "Python", logo: "/python-logo.svg" },
+  // { name: "TypeScript", logo: "/typescript-logo.svg" },
+  // { name: "JavaScript", logo: "/javascript-logo.svg" },
+  // { name: "Next.js", logo: "/next.svg" },
+  // { name: "React", logo: "/react-logo.svg" },
+  // { name: "Tailwind CSS", logo: "/tailwind-logo.svg" },
+  // { name: "HTML", logo: "/html-logo.svg" },
+  // { name: "CSS", logo: "/css-logo.svg" },
+  { name: "GitHub", logo: "/github-logo.svg" },
+  { name: "VS Code", logo: "/vs-code-logo.svg" },
+  { name: "Pandas", logo: "/pandas-logo.svg" },
+  { name: "Vercel", logo: "/vercel-logo.svg" },
+  { name: "BeautifulSoup", logo: "/beautifulsoup-logo.webp" },
+  // { name: "AI tools", logo: "/ai-tools-logo.svg" },
+  { name: "Data visualization", logo: "/data-visualization-logo.svg" },
+  // { name: "Math", logo: "/math-logo.svg" },
+];
+
+const projects = [
+  {
+    title: "Air Pollution and Electric Vehicles",
+    image: "/ev-proj-thumbnail.png",
+    alt: "Abstract liquid metal project preview",
+    description:
+      "A research project analyzing how EV sales, GDP, and other factors relate to air pollution and CO2 emissions across countries.",
+    tags: ["Python", "Pandas", "GeoPandas", "Matplotlib", "BeautifulSoup"],
+  },
+  {
+    title: "Personal Portfolio Website",
+    image: "/website-thumbnail.png",
+    alt: "Portfolio project preview icon",
+    description:
+      "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
+    tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+  },
+  // {
+  //   title: "Coursework Projects",
+  //   image: "/globe.svg",
+  //   alt: "Coursework project preview icon",
+  //   description:
+  //     "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
+  //   tags: ["Java", "Python", "Data structures", "Systems"],
+  // },
+];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className={`${containerClass} gap-12 bg-background`}>
-        <section className="flex w-full flex-col items-center justify-center gap-14 py-16 sm:flex-row sm:items-center lg:gap-24 lg:py-24">
-          <div className="flex flex-col items-center gap-4">
+      <main
+        id="top"
+        className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
+        style={{ backgroundImage: "url(/liquid-metal-dark-mirror.png)" }}
+      >
+        <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col-reverse items-center justify-center gap-14 sm:flex-row-reverse sm:items-center lg:-translate-y-8 lg:gap-24">
+          <div className="flex flex-col items-center gap-5">
             <Image
               src="/slackpfp.JPG"
               alt="Bianca's face"
               width={400}
               height={400}
               priority
+              className="rounded-lg border border-foreground/20"
             />
             <div className="flex items-center gap-8">
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="https://github.com/bbensen5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +91,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -44,7 +102,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
@@ -55,73 +113,168 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 pt-4 text-left sm:pt-8">
-            <h1 className="text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl text-highlight">
-              Hello, I'm Bianca Bensen
+          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/86">
+              Hello, I&apos;m
+            </p>
+            <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Bianca Bensen
             </h1>
-            <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/80 sm:text-2xl">
+            <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/85 sm:text-xl">
               Computer Science student at the University of Washington, building
               projects and exploring how software and AI can solve real problems.
             </p>
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                href="#contact"
+              >
+                Contact
+              </a>
+              <a
+                className="inline-flex items-center justify-center rounded-full border border-foreground/40 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-highlight hover:text-highlight"
+                href="/resume-biancabensen.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
         </section>
       </main>
-    
-      <section id="about" className={sectionClass}>
+
+      <section id="about" className={aboutSectionClass}>
         <div className={`${containerClass} gap-8`}>
-          <h2 className={headingClass}>About</h2>
-          <p className="max-w-3xl text-left text-xl font-light leading-8">
-            I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
-            I am currently working on building my portfolio and having fun with creating personal projects.
-            My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
-            I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
-            In my free time, I enjoy swimming and playing piano, especially classical music.
-          </p>
-        </div>
-      </section>
-      
-      <section id="education" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Education</h2>
-          <div className="flex flex-col gap-12">
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-medium">
-                  B.S. in Computer Science
-                </h3>
-                <p className="text-base font-light text-foreground/70">Expected 2029</p>
-              </div>
-              <p className="text-lg font-normal">
-                University of Washington, Seattle
-              </p>
-              <p className="max-w-3xl text-lg font-light leading-8">
-                Relevant coursework: Foundations of Computing, Intermediate
-                Data Programming, Hardware/Software Interface
-              </p>
-            </article>
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-medium">High School Diploma</h3>
-                <p className="text-base font-light text-foreground/70">2021 – 2025</p>
-              </div>
-              <p className="text-lg font-normal">Woodinville High School</p>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>About</h2>
+            <p className={subtitleClass}>Learn more about my goals and who I am</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+            <p className="text-left text-lg font-light leading-8 text-foreground/85">
+              I&apos;m a second year student at the University of Washington in
+              Seattle, majoring in Computer Science with a minor in Math. I have
+              several years of experience with Java and Python and am currently
+              building my portfolio through personal projects. My goal is to gain
+              experience in software development and learn how AI is used on the
+              job. In my free time, I enjoy swimming and playing piano,
+              especially classical music.
+            </p>
+            <article className={`${cardClass} lg:-translate-y-8`}>
+              <dl className="divide-y divide-foreground/15 text-sm">
+                <div className="pb-4">
+                  <dt className="text-foreground/60">School</dt>
+                  <dd className="text-base">University of Washington</dd>
+                </div>
+                <div className="py-4">
+                  <dt className="text-foreground/60">Location</dt>
+                  <dd className="text-base">Seattle, WA</dd>
+                </div>
+                <div className="py-4">
+                  <dt className="text-foreground/60">Major</dt>
+                  <dd className="text-base">Computer Science</dd>
+                </div>
+                <div className="py-4">
+                  <dt className="text-foreground/60">Minor</dt>
+                  <dd className="text-base">Mathematics</dd>
+                </div>
+                <div className="pt-4">
+                  <dt className="text-foreground/60">Expected Graduation</dt>
+                  <dd className="text-base">2029</dd>
+                </div>
+              </dl>
             </article>
           </div>
         </div>
       </section>
-      
+
+      <section id="skills" className={skillsSectionClass}>
+        <div className={`${containerClass} gap-10`}>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Skills</h2>
+            <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
+          </div>
+          <div className="grid max-w-4xl gap-3 sm:grid-cols-4 lg:grid-cols-6">
+            {skills.map((skill) => (
+              <article
+                key={skill.name}
+                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-3 text-center transition-colors hover:border-highlight"
+              >
+                <div
+                  className={`flex items-center justify-center ${
+                    skill.name === "BeautifulSoup" ? "h-20 w-20" : "h-12 w-12"
+                  }`}
+                >
+                  <Image
+                    src={skill.logo}
+                    alt={`${skill.name} logo`}
+                    width={skill.name === "BeautifulSoup" ? 80 : 56}
+                    height={skill.name === "BeautifulSoup" ? 80 : 56}
+                    className="h-full w-full object-contain brightness-0 invert"
+                  />
+                </div>
+                <h3 className="mt-2 text-sm font-medium">{skill.name}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className={sectionClass}>
+        <div className={`${containerClass} gap-10`}>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Projects</h2>
+            <p className={subtitleClass}>Academic and personal projects I have done</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {projects.map((project) => (
+              <article key={project.title} className={`${cardClass} overflow-hidden p-0`}>
+                <div className="flex h-48 items-center justify-center bg-background">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    width={520}
+                    height={320}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-4 p-6">
+                  <h3 className="text-xl font-medium">{project.title}</h3>
+                  <p className="text-sm font-light leading-6 text-foreground/80">
+                    {project.description}
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-background px-3 py-1 text-xs text-foreground/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="experience" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Experience</h2>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Experience</h2>
+            <p className={subtitleClass}>Where I&apos;ve been in the past</p>
+          </div>
           <div className="flex flex-col gap-16 lg:gap-20">
             <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
               <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
                 June 2021 - Sept 2024
               </p>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-medium">Volunteer</h3>
-                <p className="text-lg font-normal">Woodinville Farmers Market</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
+                <h3 className="text-lg font-medium">Volunteer</h3>
+                <p className="text-base font-normal">Woodinville Farmers Market</p>
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
                   <li>Managed the information booth and kids booth</li>
@@ -134,13 +287,13 @@ export default function Home() {
                 May 2023 - Aug 2023
               </p>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
-                <p className="text-lg font-normal">Gold's Gym, Woodinville</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
+                <h3 className="text-lg font-medium">Swim Instructor & Lifeguard</h3>
+                <p className="text-base font-normal">Gold&apos;s Gym, Woodinville</p>
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
-                    worked one-on-one with them to improve their swimming abilities
-                    and technique
+                    worked one-on-one with them to improve their swimming
+                    abilities and technique
                   </li>
                   <li>Assessed students and wrote evaluation reports</li>
                   <li>Conducted routine maintenance checks on the pool</li>
@@ -150,49 +303,135 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <section id="projects" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Projects</h2>
-          <div className="grid gap-8 sm:grid-cols-1">
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset">
-              <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
-              <p className="text-lg font-light leading-8">
-                A research project analyzing how EV sales, GDP, and other factors contribute to air
-                pollution and CO2 emissions in different countries around the globe. I focused on finding
-                relevant data sets and normalizing them to be easier to work with. I also used BeautifulSoup for webscraping to extract
-                data when downloading data sets was not available. I created different kinds of graphs and maps to
-                show the relationships and trends between EVs and CO2 across varying countries.
-                The main libraries used for these graphs were Pandas, GeoPandas, and MatPlotLib.
-              </p>
-              <div className="mt-auto flex gap-4 text-sm font-normal">
-                {/* <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Live demo
-                </a>
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Source code
-                </a> */}
-                <p>Python</p>
+
+      <section id="contact" className={sectionClass}>
+        <div className={`${containerClass} gap-8`}>
+          <div className="flex flex-col gap-3">
+            <h2 className={headingClass}>Contact</h2>
+            <p className={subtitleClass}>I&apos;m open to internships, learning opportunities, collaborations, or just chatting.</p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-[1.45fr_0.65fr]">
+            <form
+              className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+              action="mailto:bianca06162007@gmail.com"
+              method="post"
+              encType="text/plain"
+            >
+              {/* <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/55">
+                  Message
+                </p>
+                <h3 className="mt-2 text-xl font-medium text-highlight">
+                  Send me an email
+                </h3>
+              </div> */}
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Name
+                <input
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Email
+                <input
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
+                  name="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Message
+                <textarea
+                  className="min-h-28 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
+                  name="message"
+                  placeholder="Write your message here..."
+                  required
+                />
+              </label>
+              <button
+                className="inline-flex w-fit cursor-pointer rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                type="submit"
+              >
+                Send Message
+              </button>
+            </form>
+            <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+              <div>
+                <h3 className="mt-2 text-xl font-medium text-highlight">
+                  Other ways to connect
+                </h3>
               </div>
-            </article>
-            {/* <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
-              <h3 className="text-xl font-medium">Another Project</h3>
-              <p className="text-lg font-light leading-8">
-                Add another project here — personal apps, class work, hackathon
-                builds, or anything you want to highlight.
-              </p>
-              <div className="mt-auto flex gap-4 text-sm font-normal">
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Live demo
-                </a>
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Source code
-                </a>
+              <div className="flex flex-col gap-7">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M4 6h16v12H4z" />
+                      <path d="m4 7 8 6 8-6" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-base text-foreground/55">Email</span>
+                    <a
+                      className="text-sm underline-offset-4 hover:underline"
+                      href="mailto:bianca06162007@gmail.com"
+                    >
+                      bianca06162007@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.71 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.96c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.14 10.14 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-base text-foreground/55">GitHub</span>
+                    <a
+                      className="text-sm underline-offset-4 hover:underline"
+                      href="https://github.com/bbensen5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View profile
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                      <path d="M6.94 8.75H3.62v11.13h3.32V8.75ZM5.28 4.12a1.92 1.92 0 1 0 0 3.84 1.92 1.92 0 0 0 0-3.84ZM20.38 13.79c0-3.05-1.63-5.02-4.29-5.02-1.78 0-2.58.98-3.02 1.67V8.75H9.88v11.13h3.32v-5.5c0-1.45.28-2.86 2.07-2.86 1.77 0 1.79 1.66 1.79 2.95v5.41h3.32v-6.09Z" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-base text-foreground/55">LinkedIn</span>
+                    <a
+                      className="text-sm underline-offset-4 hover:underline"
+                      href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Connect
+                    </a>
+                  </div>
+                </div>
               </div>
-            </article> */}
+            </aside>
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Bianca Bensen.</p>
+        </div>
+      </footer>
     </div>
   );
 }

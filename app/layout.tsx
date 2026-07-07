@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Unbounded } from "next/font/google";
 import "./globals.css";
 import { Navbar } from './components/nav'
 
@@ -7,6 +7,12 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+const unbounded = Unbounded({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,10 +28,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${unbounded.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <main className="flex-auto min-w-0 pt-20 flex flex-col pl-10 pr-6 sm:pl-16 sm:pr-10 lg:pl-24 lg:pr-12">
+        <main className="flex-auto min-w-0 flex flex-col">
           <Navbar />
           {children}
         </main>
