@@ -3,9 +3,10 @@ import Link from 'next/link'
 const navItems = [
   { href: '/', name: 'Home' },
   { href: '/#about', name: 'About' },
-  { href: '/#education', name: 'Education' },
+  { href: '/#skills', name: 'Skills' },
   { href: '/#experience', name: 'Experience' },
   { href: '/#projects', name: 'Projects' },
+  { href: '/#contact', name: 'Contact' },
   { href: '/blog', name: 'Blog' },
 ]
 

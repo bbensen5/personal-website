@@ -7,23 +7,23 @@ const headingClass = "text-left text-4xl font-medium tracking-tight text-highlig
 const cardClass =
   "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
 
-const skillGroups = [
-  {
-    title: "Languages",
-    skills: ["Java", "Python", "TypeScript", "JavaScript"],
-  },
-  {
-    title: "Web",
-    skills: ["Next.js", "React", "Tailwind CSS", "HTML", "CSS"],
-  },
-  {
-    title: "Tools",
-    skills: ["GitHub", "VS Code", "Vercel", "BeautifulSoup"],
-  },
-  {
-    title: "Interests",
-    skills: ["AI tools", "Data visualization", "Software development", "Math"],
-  },
+const skills = [
+  "Java",
+  "Python",
+  "TypeScript",
+  "JavaScript",
+  "Next.js",
+  "React",
+  "Tailwind CSS",
+  "HTML",
+  "CSS",
+  "GitHub",
+  "VS Code",
+  "Vercel",
+  "BeautifulSoup",
+  "AI tools",
+  "Data visualization",
+  "Math",
 ];
 
 const projects = [
@@ -57,10 +57,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main
-        className="bg-cover bg-center px-6 py-16 sm:px-10 lg:py-24"
+        className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
         style={{ backgroundImage: "url(/liquid-metal-dark.png)" }}
       >
-        <section className="mx-auto flex min-h-[80vh] w-full max-w-7xl flex-col items-center justify-center gap-14 sm:flex-row sm:items-center lg:gap-24">
+        <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col items-center justify-center gap-14 sm:flex-row sm:items-center lg:-translate-y-8 lg:gap-24">
           <div className="flex flex-col items-center gap-5">
             <Image
               src="/slackpfp.JPG"
@@ -116,6 +116,22 @@ export default function Home() {
               Computer Science student at the University of Washington, building
               projects and exploring how software and AI can solve real problems.
             </p>
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                href="#contact"
+              >
+                Contact
+              </a>
+              <a
+                className="inline-flex items-center justify-center rounded-full border border-foreground/40 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-highlight hover:text-highlight"
+                href="/resume-biancabensen.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -154,7 +170,7 @@ export default function Home() {
                 </div>
                 <div>
                   <dt className="text-foreground/60">Year</dt>
-                  <dd className="text-lg">Second-year student</dd>
+                  <dd className="text-lg">Expected Graduation 2029</dd>
                 </div>
               </dl>
             </article>
@@ -165,20 +181,16 @@ export default function Home() {
       <section id="skills" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Skills</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {skillGroups.map((group) => (
-              <article key={group.title} className={cardClass}>
-                <h3 className="mb-4 text-2xl font-medium">{group.title}</h3>
-                <div className="flex flex-wrap gap-3">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-foreground/15 px-4 py-2 text-sm text-foreground/85"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {skills.map((skill) => (
+              <article
+                key={skill}
+                className="flex min-h-36 flex-col justify-between rounded-lg border border-foreground/15 bg-offset p-5 transition-colors hover:border-highlight"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-xs text-foreground/50">
+                  Logo
                 </div>
+                <h3 className="pt-6 text-xl font-medium">{skill}</h3>
               </article>
             ))}
           </div>
@@ -222,37 +234,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="coursework" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Coursework & Resume</h2>
-          <div className="grid gap-6 lg:grid-cols-[1fr_0.7fr]">
-            <article className={cardClass}>
-              <h3 className="mb-4 text-2xl font-medium">Relevant Coursework</h3>
-              <ul className="grid gap-3 text-lg font-light leading-7 text-foreground/85">
-                <li>Foundations of Computing</li>
-                <li>Intermediate Data Programming</li>
-                <li>Hardware/Software Interface</li>
-              </ul>
-            </article>
-            <article className={cardClass}>
-              <h3 className="mb-4 text-2xl font-medium">Resume</h3>
-              <p className="mb-6 text-lg font-light leading-7 text-foreground/85">
-                A PDF version of my resume is available for a quick overview of
-                my education, experience, and projects.
-              </p>
-              <a
-                className="inline-flex rounded-full border border-highlight px-5 py-3 text-sm font-medium text-highlight transition-colors hover:bg-highlight hover:text-background"
-                href="/resume-biancabensen.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open resume
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="experience" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Experience</h2>
@@ -290,6 +271,43 @@ export default function Home() {
                 </ul>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className={sectionClass}>
+        <div className={`${containerClass} gap-8`}>
+          <h2 className={headingClass}>Contact</h2>
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
+            <p className="max-w-3xl text-xl font-light leading-8 text-foreground/85">
+              I&apos;m always happy to connect about software development,
+              student opportunities, projects, or AI tools. The fastest way to
+              reach me is by email or LinkedIn.
+            </p>
+            <div className="flex flex-col gap-4 rounded-lg border border-foreground/15 bg-offset p-6">
+              <a
+                className="text-lg transition-colors hover:text-highlight"
+                href="mailto:bianca06162007@gmail.com"
+              >
+                bianca06162007@gmail.com
+              </a>
+              <a
+                className="text-lg transition-colors hover:text-highlight"
+                href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                className="text-lg transition-colors hover:text-highlight"
+                href="https://github.com/bbensen5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
       </section>
