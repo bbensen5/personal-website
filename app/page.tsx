@@ -36,7 +36,7 @@ const skills = [
 const projects = [
   {
     title: "Air Pollution and Electric Vehicles",
-    image: "/liquid-metal.png",
+    image: "/ev-proj-thumbnail.png",
     alt: "Abstract liquid metal project preview",
     description:
       "A research project analyzing how EV sales, GDP, and other factors relate to air pollution and CO2 emissions across countries.",
@@ -44,20 +44,20 @@ const projects = [
   },
   {
     title: "Personal Portfolio Website",
-    image: "/window.svg",
+    image: "/slackpfp.jpg",
     alt: "Portfolio project preview icon",
     description:
       "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
     tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
   },
-  {
-    title: "Coursework Projects",
-    image: "/globe.svg",
-    alt: "Coursework project preview icon",
-    description:
-      "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
-    tags: ["Java", "Python", "Data structures", "Systems"],
-  },
+  // {
+  //   title: "Coursework Projects",
+  //   image: "/globe.svg",
+  //   alt: "Coursework project preview icon",
+  //   description:
+  //     "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
+  //   tags: ["Java", "Python", "Data structures", "Systems"],
+  // },
 ];
 
 export default function Home() {
