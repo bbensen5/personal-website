@@ -62,7 +62,7 @@ export default function Home() {
       <main
         id="top"
         className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
-        style={{ backgroundImage: "url(/liquid-metal-dark.png)" }}
+        style={{ backgroundImage: "url(/liquid-metal-dark-mirror.png)" }}
       >
         <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col items-center justify-center gap-14 sm:flex-row sm:items-center lg:-translate-y-8 lg:gap-24">
           <div className="flex flex-col items-center gap-5">
@@ -110,11 +110,11 @@ export default function Home() {
             </div>
           </div>
           <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/70">
-              CS student and builder
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/86">
+              Hello, I&apos;m
             </p>
-            <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-highlight sm:text-5xl lg:text-6xl">
-              Hello, I&apos;m Bianca Bensen
+            <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Bianca Bensen
             </h1>
             <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/85 sm:text-xl">
               Computer Science student at the University of Washington, building
