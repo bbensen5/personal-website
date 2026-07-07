@@ -57,6 +57,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main
+        id="top"
         className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
         style={{ backgroundImage: "url(/liquid-metal-dark.png)" }}
       >
@@ -185,12 +186,12 @@ export default function Home() {
             {skills.map((skill) => (
               <article
                 key={skill}
-                className="flex min-h-36 flex-col justify-between rounded-lg border border-foreground/15 bg-offset p-5 transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-5 rounded-lg border border-foreground/15 bg-offset p-5 text-center transition-colors hover:border-highlight"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-xs text-foreground/50">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-xs text-foreground/50">
                   Logo
                 </div>
-                <h3 className="pt-6 text-xl font-medium">{skill}</h3>
+                <h3 className="text-xl font-medium">{skill}</h3>
               </article>
             ))}
           </div>
@@ -278,39 +279,91 @@ export default function Home() {
       <section id="contact" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>Contact</h2>
-          <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
-            <p className="max-w-3xl text-xl font-light leading-8 text-foreground/85">
-              I&apos;m always happy to connect about software development,
-              student opportunities, projects, or AI tools. The fastest way to
-              reach me is by email or LinkedIn.
-            </p>
-            <div className="flex flex-col gap-4 rounded-lg border border-foreground/15 bg-offset p-6">
-              <a
-                className="text-lg transition-colors hover:text-highlight"
-                href="mailto:bianca06162007@gmail.com"
+          <p className="max-w-3xl text-xl font-light leading-8 text-foreground/85">
+            I&apos;m always happy to connect about software development,
+            student opportunities, projects, or AI tools.
+          </p>
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <form
+              className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6"
+              action="mailto:bianca06162007@gmail.com"
+              method="post"
+              encType="text/plain"
+            >
+              <h3 className="text-2xl font-medium text-highlight">Send a message</h3>
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Name
+                <input
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Email
+                <input
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  name="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm text-foreground/70">
+                Message
+                <textarea
+                  className="min-h-36 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  name="message"
+                  placeholder="Write your message here..."
+                  required
+                />
+              </label>
+              <button
+                className="inline-flex w-fit rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                type="submit"
               >
-                bianca06162007@gmail.com
-              </a>
-              <a
-                className="text-lg transition-colors hover:text-highlight"
-                href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                className="text-lg transition-colors hover:text-highlight"
-                href="https://github.com/bbensen5"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </div>
+                Email Me
+              </button>
+            </form>
+            <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6">
+              <h3 className="text-2xl font-medium text-highlight">Contact info</h3>
+              <div className="flex flex-col gap-4">
+                <a
+                  className="text-lg transition-colors hover:text-highlight"
+                  href="mailto:bianca06162007@gmail.com"
+                >
+                  Email: bianca06162007@gmail.com
+                </a>
+                <a
+                  className="text-lg transition-colors hover:text-highlight"
+                  href="https://github.com/bbensen5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub: bbensen5
+                </a>
+                <a
+                  className="text-lg transition-colors hover:text-highlight"
+                  href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn: Bianca Bensen
+                </a>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p>Copyright statement goes here.</p>
+          <p>Built by Bianca Bensen.</p>
+        </div>
+      </footer>
     </div>
   );
 }
