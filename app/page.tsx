@@ -148,7 +148,7 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>About</h2>
-            <p className={subtitleClass}>Learn who I am</p>
+            <p className={subtitleClass}>Learn more about my goals and who I am</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
             <p className="text-left text-lg font-light leading-8 text-foreground/85">
@@ -192,7 +192,7 @@ export default function Home() {
         <div className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Skills</h2>
-            <p className={subtitleClass}>Tools and technologies that I have learned</p>
+            <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
           <div className="grid max-w-4xl gap-3 sm:grid-cols-4 lg:grid-cols-6">
             {skills.map((skill) => (
@@ -224,7 +224,7 @@ export default function Home() {
         <div className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Projects</h2>
-            <p className={subtitleClass}>Academic and personal works I have done</p>
+            <p className={subtitleClass}>Academic and personal projects I have done</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3">
             {projects.map((project) => (
