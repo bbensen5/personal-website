@@ -19,6 +19,7 @@ const skills = [
   // "CSS",
   "GitHub",
   "VS Code",
+  "Pandas",
   "Vercel",
   "BeautifulSoup",
   // "AI tools",
