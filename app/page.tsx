@@ -170,8 +170,8 @@ export default function Home() {
                   <dd className="text-base">Mathematics</dd>
                 </div>
                 <div>
-                  <dt className="text-foreground/60">Year</dt>
-                  <dd className="text-base">Expected Graduation 2029</dd>
+                  <dt className="text-foreground/60">Expected Graduation</dt>
+                  <dd className="text-base">2029</dd>
                 </div>
               </dl>
             </article>
@@ -280,8 +280,7 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>Contact</h2>
           <p className="max-w-3xl text-lg font-light leading-8 text-foreground/85">
-            I&apos;m always happy to connect about software development,
-            student opportunities, projects, or AI tools.
+            I'm open to internships, learning opportunities, collaborations, or just chatting.
           </p>
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <form
@@ -290,14 +289,14 @@ export default function Home() {
               method="post"
               encType="text/plain"
             >
-              <div>
+              {/* <div>
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/55">
                   Message
                 </p>
                 <h3 className="mt-2 text-xl font-medium text-highlight">
                   Send me an email
                 </h3>
-              </div>
+              </div> */}
               <label className="flex flex-col gap-2 text-sm text-foreground/70">
                 Name
                 <input
@@ -336,38 +335,35 @@ export default function Home() {
             </form>
             <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/55">
-                  Other ways
-                </p>
                 <h3 className="mt-2 text-xl font-medium text-highlight">
-                  Contact info
+                  Other ways to connect
                 </h3>
               </div>
               <div className="flex flex-col gap-3">
+                <span className="block text-sm text-foreground/55">Email</span>
                 <a
-                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
+                  className="px-4 py-3 text-xs"
                   href="mailto:bianca06162007@gmail.com"
                 >
-                  <span className="block text-xs text-foreground/55">Email</span>
                   bianca06162007@gmail.com
                 </a>
+                <span className="block text-sm text-foreground/55">GitHub</span>
                 <a
-                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
+                  className="px-4 py-3 text-xs"
                   href="https://github.com/bbensen5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="block text-xs text-foreground/55">GitHub</span>
-                  bbensen5
+                  View profile
                 </a>
+                <span className="block text-sm text-foreground/55">LinkedIn</span>
                 <a
-                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
+                  className="px-4 py-3 text-xs"
                   href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="block text-xs text-foreground/55">LinkedIn</span>
-                  Bianca Bensen
+                  Connect
                 </a>
               </div>
             </aside>
