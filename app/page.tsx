@@ -44,7 +44,7 @@ const projects = [
   },
   {
     title: "Personal Portfolio Website",
-    image: "/slackpfp.jpg",
+    image: "/website-thumbnail.png",
     alt: "Portfolio project preview icon",
     description:
       "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
