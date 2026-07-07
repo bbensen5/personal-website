@@ -1,28 +1,78 @@
 import Image from "next/image";
 
 const sectionClass =
-  "scroll-mt-24 bg-background py-20 text-foreground sm:py-20 lg:py-24";
-const containerClass =
-  "mx-auto flex w-full max-w-6xl flex-col";
-const headingClass =
-  "text-left text-5xl font-medium tracking-tight text-highlight";
+  "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
+const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
+const headingClass = "text-left text-4xl font-medium tracking-tight text-highlight sm:text-5xl";
+const cardClass =
+  "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
+
+const skillGroups = [
+  {
+    title: "Languages",
+    skills: ["Java", "Python", "TypeScript", "JavaScript"],
+  },
+  {
+    title: "Web",
+    skills: ["Next.js", "React", "Tailwind CSS", "HTML", "CSS"],
+  },
+  {
+    title: "Tools",
+    skills: ["GitHub", "VS Code", "Vercel", "BeautifulSoup"],
+  },
+  {
+    title: "Interests",
+    skills: ["AI tools", "Data visualization", "Software development", "Math"],
+  },
+];
+
+const projects = [
+  {
+    title: "Air Pollution and Electric Vehicles",
+    image: "/liquid-metal.png",
+    alt: "Abstract liquid metal project preview",
+    description:
+      "A research project analyzing how EV sales, GDP, and other factors relate to air pollution and CO2 emissions across countries.",
+    tags: ["Python", "Pandas", "GeoPandas", "Matplotlib", "BeautifulSoup"],
+  },
+  {
+    title: "Personal Portfolio Website",
+    image: "/window.svg",
+    alt: "Portfolio project preview icon",
+    description:
+      "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
+    tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+  },
+  {
+    title: "Coursework Projects",
+    image: "/globe.svg",
+    alt: "Coursework project preview icon",
+    description:
+      "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
+    tags: ["Java", "Python", "Data structures", "Systems"],
+  },
+];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className={`${containerClass} gap-12 bg-background`}>
-        <section className="flex w-full flex-col items-center justify-center gap-14 py-16 sm:flex-row sm:items-center lg:gap-24 lg:py-24">
-          <div className="flex flex-col items-center gap-4">
+      <main
+        className="bg-cover bg-center px-6 py-16 sm:px-10 lg:py-24"
+        style={{ backgroundImage: "url(/liquid-metal-dark.png)" }}
+      >
+        <section className="mx-auto flex min-h-[80vh] w-full max-w-7xl flex-col items-center justify-center gap-14 sm:flex-row sm:items-center lg:gap-24">
+          <div className="flex flex-col items-center gap-5">
             <Image
               src="/slackpfp.JPG"
               alt="Bianca's face"
               width={400}
               height={400}
               priority
+              className="rounded-lg border border-foreground/20"
             />
             <div className="flex items-center gap-8">
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="https://github.com/bbensen5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +83,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -44,7 +94,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
                 href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
@@ -55,61 +105,154 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 pt-4 text-left sm:pt-8">
-            <h1 className="text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl text-highlight">
-              Hello, I'm Bianca Bensen
+          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/70">
+              CS student and builder
+            </p>
+            <h1 className="text-4xl font-medium leading-tight tracking-tight text-highlight sm:text-5xl lg:text-6xl">
+              Hello, I&apos;m Bianca Bensen
             </h1>
-            <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/80 sm:text-2xl">
+            <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/85 sm:text-2xl">
               Computer Science student at the University of Washington, building
               projects and exploring how software and AI can solve real problems.
             </p>
           </div>
         </section>
       </main>
-    
+
       <section id="about" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
-          <p className="max-w-5xl text-left text-xl font-light leading-8">
-            I'm a second year student at the University of Washington in Seattle, majoring in Computer Science with a minor in Math.
-            I have several years of experience with Java and Python and am currently working on building my portfolio and having fun with creating personal projects.
-            My goal is to gain experience working in the software development industry and learn about how AI is used on the job.
-            I have been interested in programming since I started high school, and with the rise of AI, it opens up a whole new frontier for me to explore.
-            In my free time, I enjoy swimming and playing piano, especially classical music.
-          </p>
-        </div>
-      </section>
-      
-      <section id="education" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Education</h2>
-          <div className="flex flex-col gap-12">
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-medium">
-                  B.S. in Computer Science
-                </h3>
-                <p className="text-base font-light text-foreground/70">Expected 2029</p>
-              </div>
-              <p className="text-lg font-normal">
-                University of Washington, Seattle
-              </p>
-              <p className="max-w-3xl text-lg font-light leading-8">
-                Relevant coursework: Foundations of Computing, Intermediate
-                Data Programming, Hardware/Software Interface
-              </p>
-            </article>
-            <article className="flex flex-col gap-2 border-l-2 border-foreground/20 pl-6">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <h3 className="text-xl font-medium">High School Diploma</h3>
-                <p className="text-base font-light text-foreground/70">2021 – 2025</p>
-              </div>
-              <p className="text-lg font-normal">Woodinville High School</p>
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+            <p className="text-left text-xl font-light leading-8 text-foreground/85">
+              I&apos;m a second year student at the University of Washington in
+              Seattle, majoring in Computer Science with a minor in Math. I have
+              several years of experience with Java and Python and am currently
+              building my portfolio through personal projects. My goal is to gain
+              experience in software development and learn how AI is used on the
+              job. In my free time, I enjoy swimming and playing piano,
+              especially classical music.
+            </p>
+            <article className={cardClass}>
+              <h3 className="mb-5 text-2xl font-medium text-highlight">Education</h3>
+              <dl className="grid gap-4 text-sm">
+                <div>
+                  <dt className="text-foreground/60">School</dt>
+                  <dd className="text-lg">University of Washington</dd>
+                </div>
+                <div>
+                  <dt className="text-foreground/60">Location</dt>
+                  <dd className="text-lg">Seattle, WA</dd>
+                </div>
+                <div>
+                  <dt className="text-foreground/60">Major</dt>
+                  <dd className="text-lg">Computer Science</dd>
+                </div>
+                <div>
+                  <dt className="text-foreground/60">Minor</dt>
+                  <dd className="text-lg">Mathematics</dd>
+                </div>
+                <div>
+                  <dt className="text-foreground/60">Year</dt>
+                  <dd className="text-lg">Second-year student</dd>
+                </div>
+              </dl>
             </article>
           </div>
         </div>
       </section>
-      
+
+      <section id="skills" className={sectionClass}>
+        <div className={`${containerClass} gap-10`}>
+          <h2 className={headingClass}>Skills</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {skillGroups.map((group) => (
+              <article key={group.title} className={cardClass}>
+                <h3 className="mb-4 text-2xl font-medium">{group.title}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-foreground/15 px-4 py-2 text-sm text-foreground/85"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className={sectionClass}>
+        <div className={`${containerClass} gap-10`}>
+          <h2 className={headingClass}>Projects</h2>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {projects.map((project) => (
+              <article key={project.title} className={`${cardClass} overflow-hidden p-0`}>
+                <div className="flex h-48 items-center justify-center bg-background">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    width={520}
+                    height={320}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-4 p-6">
+                  <h3 className="text-2xl font-medium">{project.title}</h3>
+                  <p className="text-base font-light leading-7 text-foreground/80">
+                    {project.description}
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-background px-3 py-1 text-xs text-foreground/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="coursework" className={sectionClass}>
+        <div className={`${containerClass} gap-10`}>
+          <h2 className={headingClass}>Coursework & Resume</h2>
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.7fr]">
+            <article className={cardClass}>
+              <h3 className="mb-4 text-2xl font-medium">Relevant Coursework</h3>
+              <ul className="grid gap-3 text-lg font-light leading-7 text-foreground/85">
+                <li>Foundations of Computing</li>
+                <li>Intermediate Data Programming</li>
+                <li>Hardware/Software Interface</li>
+              </ul>
+            </article>
+            <article className={cardClass}>
+              <h3 className="mb-4 text-2xl font-medium">Resume</h3>
+              <p className="mb-6 text-lg font-light leading-7 text-foreground/85">
+                A PDF version of my resume is available for a quick overview of
+                my education, experience, and projects.
+              </p>
+              <a
+                className="inline-flex rounded-full border border-highlight px-5 py-3 text-sm font-medium text-highlight transition-colors hover:bg-highlight hover:text-background"
+                href="/resume-biancabensen.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open resume
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="experience" className={sectionClass}>
         <div className={`${containerClass} gap-10`}>
           <h2 className={headingClass}>Experience</h2>
@@ -135,61 +278,18 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
-                <p className="text-lg font-normal">Gold's Gym, Woodinville</p>
+                <p className="text-lg font-normal">Gold&apos;s Gym, Woodinville</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
-                    worked one-on-one with them to improve their swimming abilities
-                    and technique
+                    worked one-on-one with them to improve their swimming
+                    abilities and technique
                   </li>
                   <li>Assessed students and wrote evaluation reports</li>
                   <li>Conducted routine maintenance checks on the pool</li>
                 </ul>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-      
-      <section id="projects" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
-          <h2 className={headingClass}>Projects</h2>
-          <div className="grid gap-8 sm:grid-cols-1">
-            <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6 bg-offset">
-              <h3 className="text-2xl font-medium">Air Pollution and Electric Vehicles Around the World</h3>
-              <p className="text-m font-light leading-6">
-                A research project analyzing how EV sales, GDP, and other factors contribute to air
-                pollution and CO2 emissions in different countries around the globe. I focused on finding
-                relevant data sets and normalizing them to be easier to work with. I also used BeautifulSoup for webscraping to extract
-                data when downloading data sets was not available. I created different kinds of graphs and maps to
-                show the relationships and trends between EVs and CO2 across varying countries.
-                The main libraries used for these graphs were Pandas, GeoPandas, and MatPlotLib.
-              </p>
-              <div className="mt-auto flex gap-4 text-sm font-normal">
-                {/* <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Live demo
-                </a>
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Source code
-                </a> */}
-                <p>Python</p>
-              </div>
-            </article>
-            {/* <article className="flex flex-col gap-3 rounded-lg border border-foreground/15 p-6">
-              <h3 className="text-xl font-medium">Another Project</h3>
-              <p className="text-lg font-light leading-8">
-                Add another project here — personal apps, class work, hackathon
-                builds, or anything you want to highlight.
-              </p>
-              <div className="mt-auto flex gap-4 text-sm font-normal">
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Live demo
-                </a>
-                <a href="#" className="underline underline-offset-4 hover:text-neutral-600">
-                  Source code
-                </a>
-              </div>
-            </article> */}
           </div>
         </div>
       </section>
