@@ -113,10 +113,10 @@ export default function Home() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/70">
               CS student and builder
             </p>
-            <h1 className="text-4xl font-medium leading-tight tracking-tight text-highlight sm:text-5xl lg:text-6xl">
+            <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-highlight sm:text-5xl lg:text-6xl">
               Hello, I&apos;m Bianca Bensen
             </h1>
-            <p className="max-w-2xl text-xl font-light leading-relaxed text-foreground/85 sm:text-2xl">
+            <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/85 sm:text-xl">
               Computer Science student at the University of Washington, building
               projects and exploring how software and AI can solve real problems.
             </p>
@@ -156,7 +156,7 @@ export default function Home() {
               job. In my free time, I enjoy swimming and playing piano,
               especially classical music.
             </p>
-            <article className={`${cardClass} lg:-translate-y-4`}>
+            <article className={`${cardClass} lg:-translate-y-8`}>
               <h3 className="mb-5 text-xl font-medium text-highlight">Education</h3>
               <dl className="grid gap-4 text-sm">
                 <div>
@@ -191,22 +191,26 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Add a short subtitle about your tools and strengths here.</p>
           </div>
-          <div className="grid max-w-5xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid max-w-4xl gap-3 sm:grid-cols-4 lg:grid-cols-6">
             {skills.map((skill) => (
               <article
                 key={skill.name}
-                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-3 text-center transition-colors hover:border-highlight"
               >
-                <div className="flex h-16 w-16 items-center justify-center">
+                <div
+                  className={`flex items-center justify-center ${
+                    skill.name === "BeautifulSoup" ? "h-20 w-20" : "h-12 w-12"
+                  }`}
+                >
                   <Image
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    width={64}
-                    height={64}
-                    className="max-h-full max-w-full object-contain brightness-0 invert"
+                    width={skill.name === "BeautifulSoup" ? 80 : 56}
+                    height={skill.name === "BeautifulSoup" ? 80 : 56}
+                    className="h-full w-full object-contain brightness-0 invert"
                   />
                 </div>
-                <h3 className="text-sm font-medium">{skill.name}</h3>
+                <h3 className="mt-2 text-sm font-medium">{skill.name}</h3>
               </article>
             ))}
           </div>
@@ -360,7 +364,7 @@ export default function Home() {
                   Other ways to connect
                 </h3>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-7">
                 <div className="flex items-start gap-3">
                   <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center text-highlight">
                     <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
