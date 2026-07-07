@@ -281,9 +281,9 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>Contact</h2>
           <p className="max-w-3xl text-lg font-light leading-8 text-foreground/85">
-            I'm open to internships, learning opportunities, collaborations, or just chatting.
+            I&apos;m open to internships, learning opportunities, collaborations, or just chatting.
           </p>
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6 lg:grid-cols-[1.45fr_0.65fr]">
             <form
               className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
               action="mailto:bianca06162007@gmail.com"
@@ -321,7 +321,7 @@ export default function Home() {
               <label className="flex flex-col gap-2 text-sm text-foreground/70">
                 Message
                 <textarea
-                  className="min-h-36 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
+                  className="min-h-28 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
                   name="message"
                   placeholder="Write your message here..."
                   required
@@ -340,32 +340,53 @@ export default function Home() {
                   Other ways to connect
                 </h3>
               </div>
-              <div className="flex flex-col gap-3">
-                <span className="block text-sm text-foreground/55">Email</span>
-                <a
-                  className="px-4 py-3 text-xs"
-                  href="mailto:bianca06162007@gmail.com"
-                >
-                  bianca06162007@gmail.com
-                </a>
-                <span className="block text-sm text-foreground/55">GitHub</span>
-                <a
-                  className="px-4 py-3 text-xs"
-                  href="https://github.com/bbensen5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View profile
-                </a>
-                <span className="block text-sm text-foreground/55">LinkedIn</span>
-                <a
-                  className="px-4 py-3 text-xs"
-                  href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Connect
-                </a>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
+                    Icon
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm text-foreground/55">Email</span>
+                    <a
+                      className="text-xs underline-offset-4 hover:underline"
+                      href="mailto:bianca06162007@gmail.com"
+                    >
+                      bianca06162007@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
+                    Icon
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm text-foreground/55">GitHub</span>
+                    <a
+                      className="text-xs underline-offset-4 hover:underline"
+                      href="https://github.com/bbensen5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View profile
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
+                    Icon
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm text-foreground/55">LinkedIn</span>
+                    <a
+                      className="text-xs underline-offset-4 hover:underline"
+                      href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Connect
+                    </a>
+                  </div>
+                </div>
               </div>
             </aside>
           </div>
