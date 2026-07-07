@@ -3,27 +3,27 @@ import Image from "next/image";
 const sectionClass =
   "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
 const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
-const headingClass = "text-left text-4xl font-medium tracking-tight text-highlight sm:text-5xl";
+const headingClass = "text-left text-3xl font-medium tracking-tight text-highlight sm:text-4xl";
 const cardClass =
   "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
 
 const skills = [
   "Java",
   "Python",
-  "TypeScript",
-  "JavaScript",
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "HTML",
-  "CSS",
+  // "TypeScript",
+  // "JavaScript",
+  // "Next.js",
+  // "React",
+  // "Tailwind CSS",
+  // "HTML",
+  // "CSS",
   "GitHub",
   "VS Code",
   "Vercel",
   "BeautifulSoup",
-  "AI tools",
+  // "AI tools",
   "Data visualization",
-  "Math",
+  // "Math",
 ];
 
 const projects = [
@@ -141,7 +141,7 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>About</h2>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
-            <p className="text-left text-xl font-light leading-8 text-foreground/85">
+            <p className="text-left text-lg font-light leading-8 text-foreground/85">
               I&apos;m a second year student at the University of Washington in
               Seattle, majoring in Computer Science with a minor in Math. I have
               several years of experience with Java and Python and am currently
@@ -151,27 +151,27 @@ export default function Home() {
               especially classical music.
             </p>
             <article className={cardClass}>
-              <h3 className="mb-5 text-2xl font-medium text-highlight">Education</h3>
+              <h3 className="mb-5 text-xl font-medium text-highlight">Education</h3>
               <dl className="grid gap-4 text-sm">
                 <div>
                   <dt className="text-foreground/60">School</dt>
-                  <dd className="text-lg">University of Washington</dd>
+                  <dd className="text-base">University of Washington</dd>
                 </div>
                 <div>
                   <dt className="text-foreground/60">Location</dt>
-                  <dd className="text-lg">Seattle, WA</dd>
+                  <dd className="text-base">Seattle, WA</dd>
                 </div>
                 <div>
                   <dt className="text-foreground/60">Major</dt>
-                  <dd className="text-lg">Computer Science</dd>
+                  <dd className="text-base">Computer Science</dd>
                 </div>
                 <div>
                   <dt className="text-foreground/60">Minor</dt>
-                  <dd className="text-lg">Mathematics</dd>
+                  <dd className="text-base">Mathematics</dd>
                 </div>
                 <div>
                   <dt className="text-foreground/60">Year</dt>
-                  <dd className="text-lg">Expected Graduation 2029</dd>
+                  <dd className="text-base">Expected Graduation 2029</dd>
                 </div>
               </dl>
             </article>
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-xs text-foreground/50">
                   Logo
                 </div>
-                <h3 className="text-xl font-medium">{skill}</h3>
+                <h3 className="text-lg font-medium">{skill}</h3>
               </article>
             ))}
           </div>
@@ -214,8 +214,8 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-4 p-6">
-                  <h3 className="text-2xl font-medium">{project.title}</h3>
-                  <p className="text-base font-light leading-7 text-foreground/80">
+                  <h3 className="text-xl font-medium">{project.title}</h3>
+                  <p className="text-sm font-light leading-6 text-foreground/80">
                     {project.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-2">
@@ -244,9 +244,9 @@ export default function Home() {
                 June 2021 - Sept 2024
               </p>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-medium">Volunteer</h3>
-                <p className="text-lg font-normal">Woodinville Farmers Market</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
+                <h3 className="text-lg font-medium">Volunteer</h3>
+                <p className="text-base font-normal">Woodinville Farmers Market</p>
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
                   <li>Managed the information booth and kids booth</li>
@@ -259,9 +259,9 @@ export default function Home() {
                 May 2023 - Aug 2023
               </p>
               <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-medium">Swim Instructor & Lifeguard</h3>
-                <p className="text-lg font-normal">Gold&apos;s Gym, Woodinville</p>
-                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-lg font-light leading-6">
+                <h3 className="text-lg font-medium">Swim Instructor & Lifeguard</h3>
+                <p className="text-base font-normal">Gold&apos;s Gym, Woodinville</p>
+                <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
                     worked one-on-one with them to improve their swimming
@@ -279,22 +279,29 @@ export default function Home() {
       <section id="contact" className={sectionClass}>
         <div className={`${containerClass} gap-8`}>
           <h2 className={headingClass}>Contact</h2>
-          <p className="max-w-3xl text-xl font-light leading-8 text-foreground/85">
+          <p className="max-w-3xl text-lg font-light leading-8 text-foreground/85">
             I&apos;m always happy to connect about software development,
             student opportunities, projects, or AI tools.
           </p>
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <form
-              className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6"
+              className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
               action="mailto:bianca06162007@gmail.com"
               method="post"
               encType="text/plain"
             >
-              <h3 className="text-2xl font-medium text-highlight">Send a message</h3>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/55">
+                  Message
+                </p>
+                <h3 className="mt-2 text-xl font-medium text-highlight">
+                  Send me an email
+                </h3>
+              </div>
               <label className="flex flex-col gap-2 text-sm text-foreground/70">
                 Name
                 <input
-                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
                   name="name"
                   type="text"
                   placeholder="Your name"
@@ -304,7 +311,7 @@ export default function Home() {
               <label className="flex flex-col gap-2 text-sm text-foreground/70">
                 Email
                 <input
-                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  className="rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
                   name="email"
                   type="email"
                   placeholder="your.email@example.com"
@@ -314,43 +321,53 @@ export default function Home() {
               <label className="flex flex-col gap-2 text-sm text-foreground/70">
                 Message
                 <textarea
-                  className="min-h-36 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-highlight"
+                  className="min-h-36 resize-y rounded-md border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-highlight"
                   name="message"
                   placeholder="Write your message here..."
                   required
                 />
               </label>
               <button
-                className="inline-flex w-fit rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                className="inline-flex w-fit cursor-pointer rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
                 type="submit"
               >
-                Email Me
+                Send Message
               </button>
             </form>
-            <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6">
-              <h3 className="text-2xl font-medium text-highlight">Contact info</h3>
-              <div className="flex flex-col gap-4">
+            <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-foreground/55">
+                  Other ways
+                </p>
+                <h3 className="mt-2 text-xl font-medium text-highlight">
+                  Contact info
+                </h3>
+              </div>
+              <div className="flex flex-col gap-3">
                 <a
-                  className="text-lg transition-colors hover:text-highlight"
+                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
                   href="mailto:bianca06162007@gmail.com"
                 >
-                  Email: bianca06162007@gmail.com
+                  <span className="block text-xs text-foreground/55">Email</span>
+                  bianca06162007@gmail.com
                 </a>
                 <a
-                  className="text-lg transition-colors hover:text-highlight"
+                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
                   href="https://github.com/bbensen5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub: bbensen5
+                  <span className="block text-xs text-foreground/55">GitHub</span>
+                  bbensen5
                 </a>
                 <a
-                  className="text-lg transition-colors hover:text-highlight"
+                  className="rounded-md border border-foreground/10 bg-background px-4 py-3 text-sm transition-colors hover:border-highlight hover:text-highlight"
                   href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn: Bianca Bensen
+                  <span className="block text-xs text-foreground/55">LinkedIn</span>
+                  Bianca Bensen
                 </a>
               </div>
             </aside>
@@ -359,7 +376,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright statement goes here.</p>
           <p>Built by Bianca Bensen.</p>
         </div>
