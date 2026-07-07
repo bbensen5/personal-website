@@ -10,23 +10,23 @@ const cardClass =
   "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
 
 const skills = [
-  "Java",
-  "Python",
-  // "TypeScript",
-  // "JavaScript",
-  // "Next.js",
-  // "React",
-  // "Tailwind CSS",
-  // "HTML",
-  // "CSS",
-  "GitHub",
-  "VS Code",
-  "Pandas",
-  "Vercel",
-  "BeautifulSoup",
-  // "AI tools",
-  "Data visualization",
-  // "Math",
+  { name: "Java", logo: "/java-logo.svg" },
+  { name: "Python", logo: "/python-logo.svg" },
+  // { name: "TypeScript", logo: "/typescript-logo.svg" },
+  // { name: "JavaScript", logo: "/javascript-logo.svg" },
+  // { name: "Next.js", logo: "/next.svg" },
+  // { name: "React", logo: "/react-logo.svg" },
+  // { name: "Tailwind CSS", logo: "/tailwind-logo.svg" },
+  // { name: "HTML", logo: "/html-logo.svg" },
+  // { name: "CSS", logo: "/css-logo.svg" },
+  { name: "GitHub", logo: "/github-logo.svg" },
+  { name: "VS Code", logo: "/vs-code-logo.svg" },
+  { name: "Pandas", logo: "/pandas-logo.svg" },
+  { name: "Vercel", logo: "/vercel-logo.svg" },
+  { name: "BeautifulSoup", logo: "/beautifulsoup-logo.webp" },
+  // { name: "AI tools", logo: "/ai-tools-logo.svg" },
+  { name: "Data visualization", logo: "/data-visualization-logo.svg" },
+  // { name: "Math", logo: "/math-logo.svg" },
 ];
 
 const projects = [
@@ -194,13 +194,19 @@ export default function Home() {
           <div className="grid max-w-5xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {skills.map((skill) => (
               <article
-                key={skill}
+                key={skill.name}
                 className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-dashed border-foreground/25 text-[0.65rem] text-foreground/50">
-                  Logo
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-background/40 p-2">
+                  <Image
+                    src={skill.logo}
+                    alt={`${skill.name} logo`}
+                    width={40}
+                    height={40}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
-                <h3 className="text-sm font-medium">{skill}</h3>
+                <h3 className="text-sm font-medium">{skill.name}</h3>
               </article>
             ))}
           </div>
@@ -295,11 +301,8 @@ export default function Home() {
         <div className={`${containerClass} gap-8`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Contact</h2>
-            <p className={subtitleClass}>Add a short subtitle inviting people to reach out here.</p>
+            <p className={subtitleClass}>I&apos;m open to internships, learning opportunities, collaborations, or just chatting.</p>
           </div>
-          <p className="max-w-3xl text-lg font-light leading-8 text-foreground/85">
-            I&apos;m open to internships, learning opportunities, collaborations, or just chatting.
-          </p>
           <div className="grid gap-6 lg:grid-cols-[1.45fr_0.65fr]">
             <form
               className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
@@ -363,9 +366,9 @@ export default function Home() {
                     Icon
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-sm text-foreground/55">Email</span>
+                    <span className="text-base text-foreground/55">Email</span>
                     <a
-                      className="text-xs underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline"
                       href="mailto:bianca06162007@gmail.com"
                     >
                       bianca06162007@gmail.com
@@ -373,13 +376,19 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
-                    Icon
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-background/40 p-1.5">
+                    <Image
+                      src="/github-logo.svg"
+                      alt="GitHub logo"
+                      width={22}
+                      height={22}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-sm text-foreground/55">GitHub</span>
+                    <span className="text-base text-foreground/55">GitHub</span>
                     <a
-                      className="text-xs underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline"
                       href="https://github.com/bbensen5"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -389,13 +398,19 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-dashed border-foreground/25 text-[0.6rem] text-foreground/50">
-                    Icon
+                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-background/40 p-1.5">
+                    <Image
+                      src="/linkedin-logo.png"
+                      alt="LinkedIn logo"
+                      width={22}
+                      height={22}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-sm text-foreground/55">LinkedIn</span>
+                    <span className="text-base text-foreground/55">LinkedIn</span>
                     <a
-                      className="text-xs underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline"
                       href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                       target="_blank"
                       rel="noopener noreferrer"
