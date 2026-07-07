@@ -429,8 +429,7 @@ export default function Home() {
 
       <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright statement goes here.</p>
-          <p>Built by Bianca Bensen.</p>
+          <p>© 2026 Bianca Bensen.</p>
         </div>
       </footer>
     </div>
