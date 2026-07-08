@@ -11,7 +11,7 @@ const headingClass =
   "font-[family-name:var(--font-display)] text-left text-3xl font-bold tracking-tight text-highlight sm:text-4xl";
 const subtitleClass = "max-w-2xl text-sm font-light leading-6 text-foreground/65";
 const cardClass =
-  "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight";
+  "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight active:border-highlight";
 
 const skills = [
   { name: "Java", logo: "/java-logo.svg" },
@@ -80,7 +80,7 @@ export default function Home() {
             />
             <div className="flex items-center gap-8">
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background active:bg-highlight active:text-background"
                 href="https://github.com/bbensen5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,7 +91,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background active:bg-highlight active:text-background"
                 href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -102,7 +102,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground text-foreground transition-colors hover:bg-highlight hover:text-background active:bg-highlight active:text-background"
                 href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
@@ -113,7 +113,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex max-w-4xl flex-1 flex-col items-start gap-6 text-left">
+          <div className="flex max-w-4xl flex-1 flex-col items-center gap-6 text-center sm:items-start sm:text-left">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-foreground/86">
               Hello, I&apos;m
             </p>
@@ -124,15 +124,15 @@ export default function Home() {
               Computer Science student at the University of Washington, building
               projects and exploring how software and AI can solve real problems.
             </p>
-            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+            <div className="flex flex-row gap-3 pt-2">
               <a
-                className="inline-flex items-center justify-center rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-highlight px-4 py-3 text-xs font-medium text-background transition-colors hover:bg-foreground active:bg-foreground sm:px-5 sm:text-sm"
                 href="#contact"
               >
                 Contact
               </a>
               <a
-                className="inline-flex items-center justify-center rounded-full border border-foreground/40 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-highlight hover:text-highlight"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-foreground/40 px-4 py-3 text-xs font-medium text-foreground transition-colors hover:border-highlight hover:text-highlight active:border-highlight active:text-highlight sm:px-5 sm:text-sm"
                 href="/resume-biancabensen.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -196,11 +196,11 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
-          <div className="grid w-full max-w-6xl gap-5 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid w-full max-w-6xl grid-cols-2 gap-2 min-[400px]:grid-cols-3 sm:gap-5 lg:grid-cols-6">
             {skills.map((skill) => (
               <article
                 key={skill.name}
-                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-2 text-center transition-colors hover:border-highlight active:border-highlight sm:gap-3 sm:p-4"
               >
                 <div
                   className={`flex items-center justify-center ${
@@ -320,7 +320,7 @@ export default function Home() {
           </div>
           <div className="grid gap-6 lg:grid-cols-[1.45fr_0.65fr]">
             <form
-              className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+              className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
               action="mailto:bianca06162007@gmail.com"
               method="post"
               encType="text/plain"
@@ -363,13 +363,13 @@ export default function Home() {
                 />
               </label>
               <button
-                className="inline-flex w-fit cursor-pointer rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
+                className="inline-flex w-fit cursor-pointer rounded-full bg-highlight px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground active:bg-foreground"
                 type="submit"
               >
                 Send Message
               </button>
             </form>
-            <aside className="flex flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+            <aside className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
               <div>
                 <h3 className="mt-2 text-xl font-medium text-highlight">
                   Other ways to connect
@@ -386,7 +386,7 @@ export default function Home() {
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground">Email</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
+                      className="break-all text-sm text-foreground/55 underline-offset-4 hover:underline active:underline"
                       href="mailto:bianca06162007@gmail.com"
                     >
                       bianca06162007@gmail.com
@@ -402,7 +402,7 @@ export default function Home() {
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground">GitHub</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
+                      className="text-sm text-foreground/55 underline-offset-4 hover:underline active:underline"
                       href="https://github.com/bbensen5"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -420,7 +420,7 @@ export default function Home() {
                   <div className="flex flex-col gap-0.5">
                     <span className="text-base text-foreground">LinkedIn</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
+                      className="text-sm text-foreground/55 underline-offset-4 hover:underline active:underline"
                       href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -436,11 +436,11 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Bianca Bensen.</p>
-          <div className="flex items-center gap-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-row items-center justify-between gap-4 text-xs">
+          <p className="whitespace-nowrap">© 2026 Bianca Bensen.</p>
+          <div className="flex shrink-0 items-center gap-5 sm:gap-8">
               <a
-                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85 active:text-foreground/85"
                 href="https://github.com/bbensen5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -451,7 +451,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85 active:text-foreground/85"
                 href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -462,7 +462,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85 active:text-foreground/85"
                 href="mailto:bianca06162007@gmail.com"
                 aria-label="Email"
               >
