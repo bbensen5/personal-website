@@ -27,14 +27,28 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bianca Bensen | Portfolio",
     description: "Computer science student interested in data science, creating new things, and exploring the world of tech.",
-    images: ["/og-image.jpg"],
+    images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Bianca Bensen | Portfolio",
+    },
+  ],
   },
 
   openGraph: {
     title: "Bianca Bensen | Portfolio",
     description: "Computer science student interested in data science, creating new things, and exploring the world of tech.",
     url: "https://biancabensen.vercel.app",
-    images: ["/og-image.png"],
+    images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Bianca Bensen | Portfolio",
+    },
+  ],
   },
 };
 
