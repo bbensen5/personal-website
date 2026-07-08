@@ -27,7 +27,7 @@ const skills = [
   { name: "VS Code", logo: "/vs-code-logo.svg" },
   { name: "Pandas", logo: "/pandas-logo.svg" },
   { name: "Vercel", logo: "/vercel-logo.svg" },
-  { name: "BeautifulSoup", logo: "/beautifulsoup-logo.webp" },
+  { name: "BeautifulSoup", logo: "/beautifulsoup-logo.png" },
   // { name: "AI tools", logo: "/ai-tools-logo.svg" },
   { name: "Data visualization", logo: "/data-visualization-logo.svg" },
   // { name: "Math", logo: "/math-logo.svg" },
@@ -68,7 +68,7 @@ export default function Home() {
         className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
         style={{ backgroundImage: "url(/liquid-metal-dark-mirror.png)" }}
       >
-        <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col-reverse items-center justify-center gap-14 sm:flex-row-reverse sm:items-center lg:-translate-y-8 lg:gap-24">
+        <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col-reverse items-center justify-center gap-10 sm:flex-row-reverse sm:items-center lg:-translate-y-8 lg:gap-16">
           <div className="flex flex-col items-center gap-5">
             <Image
               src="/slackpfp.JPG"
@@ -118,7 +118,7 @@ export default function Home() {
               Hello, I&apos;m
             </p>
             <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Bianca Bensen
+              Bianca  Bensen
             </h1>
             <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/85 sm:text-xl">
               Computer Science student at the University of Washington, building
@@ -145,22 +145,24 @@ export default function Home() {
       </main>
 
       <section id="about" className={aboutSectionClass}>
-        <div className={`${containerClass} gap-8`}>
-          <div className="flex flex-col gap-3">
-            <h2 className={headingClass}>About</h2>
-            <p className={subtitleClass}>Learn more about my goals and who I am</p>
-          </div>
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
-            <p className="text-left text-lg font-light leading-8 text-foreground/85">
-              I&apos;m a second year student at the University of Washington in
-              Seattle, majoring in Computer Science with a minor in Math. I have
-              several years of experience with Java and Python and am currently
-              building my portfolio through personal projects. My goal is to gain
-              experience in software development and learn how AI is used on the
-              job. In my free time, I enjoy swimming and playing piano,
-              especially classical music.
-            </p>
-            <article className={`${cardClass} lg:-translate-y-8`}>
+        <div className={`${containerClass}`}>
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-3">
+                <h2 className={headingClass}>About</h2>
+                <p className={subtitleClass}>Learn more about my goals and who I am</p>
+              </div>
+              <p className="text-left text-lg font-light leading-8 text-foreground/85">
+                I&apos;m a second year student at the University of Washington in
+                Seattle, majoring in Computer Science with a minor in Math. I have
+                several years of experience with Java and Python and am currently
+                building my portfolio through personal projects. My goal is to gain
+                experience in software development and learn how AI is used on the
+                job. In my free time, I enjoy swimming and playing piano,
+                especially classical music.
+              </p>
+            </div>
+            <article className={cardClass}>
               <dl className="divide-y divide-foreground/15 text-sm">
                 <div className="pb-4">
                   <dt className="text-foreground/60">School</dt>
@@ -194,26 +196,32 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
-          <div className="grid max-w-4xl gap-3 sm:grid-cols-4 lg:grid-cols-6">
+          <div className="grid w-full max-w-6xl gap-5 sm:grid-cols-3 lg:grid-cols-6">
             {skills.map((skill) => (
               <article
                 key={skill.name}
-                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-3 text-center transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
               >
                 <div
                   className={`flex items-center justify-center ${
-                    skill.name === "BeautifulSoup" ? "h-20 w-20" : "h-12 w-12"
+                    skill.name === "BeautifulSoup" ? "h-16 w-16" : "h-12 w-12"
                   }`}
                 >
                   <Image
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    width={skill.name === "BeautifulSoup" ? 80 : 56}
-                    height={skill.name === "BeautifulSoup" ? 80 : 56}
+                    width={skill.name === "BeautifulSoup" ? 64 : 56}
+                    height={skill.name === "BeautifulSoup" ? 64 : 56}
                     className="h-full w-full object-contain brightness-0 invert"
                   />
                 </div>
-                <h3 className="mt-2 text-sm font-medium">{skill.name}</h3>
+                <h3
+                  className={`text-sm font-medium ${
+                    skill.name === "BeautifulSoup" ? "mt-1" : "mt-2"
+                  }`}
+                >
+                  {skill.name}
+                </h3>
               </article>
             ))}
           </div>
@@ -266,14 +274,14 @@ export default function Home() {
             <h2 className={headingClass}>Experience</h2>
             <p className={subtitleClass}>Where I&apos;ve been in the past</p>
           </div>
-          <div className="flex flex-col gap-16 lg:gap-20">
-            <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
-              <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                June 2021 - Sept 2024
-              </p>
+          <div className="relative flex flex-col gap-14 pl-8 before:absolute before:left-[0.375rem] before:top-1 before:bottom-1 before:w-px before:bg-highlight/55 lg:gap-16">
+            <article className="relative before:absolute before:-left-8 before:top-1 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
+                <p className="text-xs font-light uppercase leading-5 text-foreground/65">
+                  June 2021 - Sept 2024
+                </p>
                 <h3 className="text-lg font-medium">Volunteer</h3>
-                <p className="text-base font-normal">Woodinville Farmers Market</p>
+                <p className="text-base font-normal text-highlight">Woodinville Farmers Market</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
@@ -282,13 +290,13 @@ export default function Home() {
                 </ul>
               </div>
             </article>
-            <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
-              <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                May 2023 - Aug 2023
-              </p>
+            <article className="relative before:absolute before:-left-8 before:top-1 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
+                <p className="text-xs font-light uppercase leading-5 text-foreground/65">
+                  May 2023 - Aug 2023
+                </p>
                 <h3 className="text-lg font-medium">Swim Instructor & Lifeguard</h3>
-                <p className="text-base font-normal">Gold&apos;s Gym, Woodinville</p>
+                <p className="text-base font-normal text-highlight">Gold&apos;s Gym, Woodinville</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
@@ -376,9 +384,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">Email</span>
+                    <span className="text-base text-foreground">Email</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="mailto:bianca06162007@gmail.com"
                     >
                       bianca06162007@gmail.com
@@ -392,9 +400,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">GitHub</span>
+                    <span className="text-base text-foreground">GitHub</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="https://github.com/bbensen5"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -410,9 +418,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">LinkedIn</span>
+                    <span className="text-base text-foreground">LinkedIn</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -430,6 +438,40 @@ export default function Home() {
       <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Bianca Bensen.</p>
+          <div className="flex items-center gap-8">
+              <a
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                href="https://github.com/bbensen5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.71 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.96c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.14 10.14 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                </svg>
+              </a>
+              <a
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <path d="M6.94 8.75H3.62v11.13h3.32V8.75ZM5.28 4.12a1.92 1.92 0 1 0 0 3.84 1.92 1.92 0 0 0 0-3.84ZM20.38 13.79c0-3.05-1.63-5.02-4.29-5.02-1.78 0-2.58.98-3.02 1.67V8.75H9.88v11.13h3.32v-5.5c0-1.45.28-2.86 2.07-2.86 1.77 0 1.79 1.66 1.79 2.95v5.41h3.32v-6.09Z" />
+                </svg>
+              </a>
+              <a
+                className="flex h-5 w-5 items-center justify-center rounded-full text-foreground/65 transition-colors hover:text-foreground/85"
+                href="mailto:bianca06162007@gmail.com"
+                aria-label="Email"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </a>
+            </div>
         </div>
       </footer>
     </div>
