@@ -24,7 +24,7 @@ export function Navbar() {
       >
         <button
           type="button"
-          className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 text-foreground transition-colors hover:text-highlight sm:hidden"
+          className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 text-foreground transition-colors hover:text-highlight active:text-highlight sm:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
@@ -40,7 +40,7 @@ export function Navbar() {
             <Link
               key={href}
               href={href}
-              className="relative m-1 flex items-center px-3 py-0.5 transition-all hover:text-highlight"
+              className="relative m-1 flex items-center px-3 py-0.5 transition-all hover:text-highlight active:text-highlight"
             >
               {name}
             </Link>
@@ -50,10 +50,10 @@ export function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`absolute right-0 top-full w-64 origin-right border-b border-l border-foreground/10 bg-background shadow-2xl transition-all duration-200 sm:hidden ${
+        className={`absolute inset-x-0 top-full w-full origin-top border-b border-foreground/10 bg-background shadow-2xl transition-all duration-200 sm:hidden ${
           isOpen
-            ? 'visible scale-x-100 opacity-100'
-            : 'invisible scale-x-0 opacity-0'
+            ? 'visible scale-y-100 opacity-100'
+            : 'invisible scale-y-0 opacity-0'
         }`}
       >
         <div className="flex flex-col p-3">
@@ -61,7 +61,7 @@ export function Navbar() {
             <Link
               key={href}
               href={href}
-              className="px-4 py-3 transition-colors hover:text-highlight"
+              className="px-6 py-3 text-center transition-colors hover:text-highlight active:text-highlight"
               onClick={() => setIsOpen(false)}
             >
               {name}
