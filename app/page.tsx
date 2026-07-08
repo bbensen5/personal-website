@@ -118,7 +118,7 @@ export default function Home() {
               Hello, I&apos;m
             </p>
             <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Bianca Bensen
+              Bianca  Bensen
             </h1>
             <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/85 sm:text-xl">
               Computer Science student at the University of Washington, building
@@ -145,22 +145,24 @@ export default function Home() {
       </main>
 
       <section id="about" className={aboutSectionClass}>
-        <div className={`${containerClass} gap-8`}>
-          <div className="flex flex-col gap-3">
-            <h2 className={headingClass}>About</h2>
-            <p className={subtitleClass}>Learn more about my goals and who I am</p>
-          </div>
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
-            <p className="text-left text-lg font-light leading-8 text-foreground/85">
-              I&apos;m a second year student at the University of Washington in
-              Seattle, majoring in Computer Science with a minor in Math. I have
-              several years of experience with Java and Python and am currently
-              building my portfolio through personal projects. My goal is to gain
-              experience in software development and learn how AI is used on the
-              job. In my free time, I enjoy swimming and playing piano,
-              especially classical music.
-            </p>
-            <article className={`${cardClass} lg:-translate-y-8`}>
+        <div className={`${containerClass}`}>
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-3">
+                <h2 className={headingClass}>About</h2>
+                <p className={subtitleClass}>Learn more about my goals and who I am</p>
+              </div>
+              <p className="text-left text-lg font-light leading-8 text-foreground/85">
+                I&apos;m a second year student at the University of Washington in
+                Seattle, majoring in Computer Science with a minor in Math. I have
+                several years of experience with Java and Python and am currently
+                building my portfolio through personal projects. My goal is to gain
+                experience in software development and learn how AI is used on the
+                job. In my free time, I enjoy swimming and playing piano,
+                especially classical music.
+              </p>
+            </div>
+            <article className={cardClass}>
               <dl className="divide-y divide-foreground/15 text-sm">
                 <div className="pb-4">
                   <dt className="text-foreground/60">School</dt>
@@ -194,7 +196,7 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
-          <div className="grid max-w-4xl gap-3 sm:grid-cols-4 lg:grid-cols-6">
+          <div className="grid max-w-5xl gap-3 sm:grid-cols-4 lg:grid-cols-7">
             {skills.map((skill) => (
               <article
                 key={skill.name}
@@ -213,7 +215,13 @@ export default function Home() {
                     className="h-full w-full object-contain brightness-0 invert"
                   />
                 </div>
-                <h3 className="mt-2 text-sm font-medium">{skill.name}</h3>
+                <h3
+                  className={`text-sm font-medium ${
+                    skill.name === "BeautifulSoup" ? "mt-0" : "mt-2"
+                  }`}
+                >
+                  {skill.name}
+                </h3>
               </article>
             ))}
           </div>
