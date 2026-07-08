@@ -196,11 +196,11 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
-          <div className="grid max-w-6xl gap-3 sm:grid-cols-4 lg:grid-cols-8">
+          <div className="grid w-full max-w-6xl gap-5 sm:grid-cols-3 lg:grid-cols-6">
             {skills.map((skill) => (
               <article
                 key={skill.name}
-                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-3 text-center transition-colors hover:border-highlight"
+                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-lg border border-foreground/15 bg-offset p-4 text-center transition-colors hover:border-highlight"
               >
                 <div
                   className={`flex items-center justify-center ${
