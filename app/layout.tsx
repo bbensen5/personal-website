@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Bianca Bensen",
+    title: "Bianca Bensen | Portfolio",
     description: "Computer science student interested in data science, creating new things, and exploring the world of tech.",
     images: ["/og-image.jpg"],
   },
 
   openGraph: {
-    title: "Bianca Bensen",
+    title: "Bianca Bensen | Portfolio",
     description: "Computer science student interested in data science, creating new things, and exploring the world of tech.",
     url: "https://biancabensen.vercel.app",
     images: ["/og-image.png"],
