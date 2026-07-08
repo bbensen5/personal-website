@@ -196,7 +196,7 @@ export default function Home() {
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
           </div>
-          <div className="grid max-w-5xl gap-3 sm:grid-cols-4 lg:grid-cols-7">
+          <div className="grid max-w-6xl gap-3 sm:grid-cols-4 lg:grid-cols-8">
             {skills.map((skill) => (
               <article
                 key={skill.name}
@@ -204,20 +204,20 @@ export default function Home() {
               >
                 <div
                   className={`flex items-center justify-center ${
-                    skill.name === "BeautifulSoup" ? "h-20 w-20" : "h-12 w-12"
+                    skill.name === "BeautifulSoup" ? "h-16 w-16" : "h-12 w-12"
                   }`}
                 >
                   <Image
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    width={skill.name === "BeautifulSoup" ? 80 : 56}
-                    height={skill.name === "BeautifulSoup" ? 80 : 56}
+                    width={skill.name === "BeautifulSoup" ? 64 : 56}
+                    height={skill.name === "BeautifulSoup" ? 64 : 56}
                     className="h-full w-full object-contain brightness-0 invert"
                   />
                 </div>
                 <h3
                   className={`text-sm font-medium ${
-                    skill.name === "BeautifulSoup" ? "mt-0" : "mt-2"
+                    skill.name === "BeautifulSoup" ? "mt-1" : "mt-2"
                   }`}
                 >
                   {skill.name}
