@@ -267,7 +267,7 @@ export default function Home() {
             <p className={subtitleClass}>Where I&apos;ve been in the past</p>
           </div>
           <div className="relative flex flex-col gap-14 pl-8 before:absolute before:left-[0.375rem] before:top-1 before:bottom-1 before:w-px before:bg-highlight/55 lg:gap-16">
-            <article className="relative before:absolute before:-left-8 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
+            <article className="relative before:absolute before:-left-8 before:top-1 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
                 <p className="text-xs font-light uppercase leading-5 text-foreground/65">
                   June 2021 - Sept 2024
@@ -282,7 +282,7 @@ export default function Home() {
                 </ul>
               </div>
             </article>
-            <article className="relative before:absolute before:-left-8 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
+            <article className="relative before:absolute before:-left-8 before:top-1 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
                 <p className="text-xs font-light uppercase leading-5 text-foreground/65">
                   May 2023 - Aug 2023
