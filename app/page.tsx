@@ -220,8 +220,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={sectionClass}>
-        <div id="projects" className={`${containerClass} gap-10`}>
+      <section id="projects" className={sectionClass}>
+        <div className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Projects</h2>
             <p className={subtitleClass}>Academic and personal projects I have done</p>
@@ -266,12 +266,12 @@ export default function Home() {
             <h2 className={headingClass}>Experience</h2>
             <p className={subtitleClass}>Where I&apos;ve been in the past</p>
           </div>
-          <div className="flex flex-col gap-16 lg:gap-20">
-            <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
-              <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                June 2021 - Sept 2024
-              </p>
+          <div className="relative flex flex-col gap-14 pl-8 before:absolute before:left-0 before:top-1 before:bottom-1 before:w-px before:bg-highlight/55 lg:gap-16">
+            <article className="relative before:absolute before:-left-9 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
+                <p className="text-xs font-light uppercase leading-5 text-foreground/65">
+                  June 2021 - Sept 2024
+                </p>
                 <h3 className="text-lg font-medium">Volunteer</h3>
                 <p className="text-base font-normal">Woodinville Farmers Market</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
@@ -282,11 +282,11 @@ export default function Home() {
                 </ul>
               </div>
             </article>
-            <article className="grid grid-cols-1 gap-4 sm:grid-cols-[11rem_1fr] sm:gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
-              <p className="text-base font-light leading-7 text-foreground/70 sm:text-left">
-                May 2023 - Aug 2023
-              </p>
+            <article className="relative before:absolute before:-left-9 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
+                <p className="text-xs font-light uppercase leading-5 text-foreground/65">
+                  May 2023 - Aug 2023
+                </p>
                 <h3 className="text-lg font-medium">Swim Instructor & Lifeguard</h3>
                 <p className="text-base font-normal">Gold&apos;s Gym, Woodinville</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
