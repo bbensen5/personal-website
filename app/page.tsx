@@ -266,14 +266,14 @@ export default function Home() {
             <h2 className={headingClass}>Experience</h2>
             <p className={subtitleClass}>Where I&apos;ve been in the past</p>
           </div>
-          <div className="relative flex flex-col gap-14 pl-8 before:absolute before:left-0 before:top-1 before:bottom-1 before:w-px before:bg-highlight/55 lg:gap-16">
-            <article className="relative before:absolute before:-left-9 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
+          <div className="relative flex flex-col gap-14 pl-8 before:absolute before:left-[0.375rem] before:top-1 before:bottom-1 before:w-px before:bg-highlight/55 lg:gap-16">
+            <article className="relative before:absolute before:-left-8 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
                 <p className="text-xs font-light uppercase leading-5 text-foreground/65">
                   June 2021 - Sept 2024
                 </p>
                 <h3 className="text-lg font-medium">Volunteer</h3>
-                <p className="text-base font-normal">Woodinville Farmers Market</p>
+                <p className="text-base font-normal text-highlight">Woodinville Farmers Market</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>Transferred and unloaded supplies for vendors</li>
                   <li>Set up tents, booths, and flags</li>
@@ -282,13 +282,13 @@ export default function Home() {
                 </ul>
               </div>
             </article>
-            <article className="relative before:absolute before:-left-9 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
+            <article className="relative before:absolute before:-left-8 before:top-2 before:h-3 before:w-3 before:rounded-full before:border before:border-highlight before:bg-background">
               <div className="flex flex-col gap-3">
                 <p className="text-xs font-light uppercase leading-5 text-foreground/65">
                   May 2023 - Aug 2023
                 </p>
                 <h3 className="text-lg font-medium">Swim Instructor & Lifeguard</h3>
-                <p className="text-base font-normal">Gold&apos;s Gym, Woodinville</p>
+                <p className="text-base font-normal text-highlight">Gold&apos;s Gym, Woodinville</p>
                 <ul className="max-w-3xl list-disc space-y-2 pl-5 text-base font-light leading-6">
                   <li>
                     Taught swim lessons in small groups for kids ages 5-13 and
