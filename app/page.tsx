@@ -220,8 +220,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
+      <section className={sectionClass}>
+        <div id="projects" className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Projects</h2>
             <p className={subtitleClass}>Academic and personal projects I have done</p>
@@ -376,9 +376,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">Email</span>
+                    <span className="text-base text-foreground">Email</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="mailto:bianca06162007@gmail.com"
                     >
                       bianca06162007@gmail.com
@@ -392,9 +392,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">GitHub</span>
+                    <span className="text-base text-foreground">GitHub</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="https://github.com/bbensen5"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -410,9 +410,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-base text-foreground/55">LinkedIn</span>
+                    <span className="text-base text-foreground">LinkedIn</span>
                     <a
-                      className="text-sm underline-offset-4 hover:underline"
+                      className="text-sm underline-offset-4 hover:underline text-foreground/55"
                       href="https://www.linkedin.com/in/bianca-bensen-897b593b5/"
                       target="_blank"
                       rel="noopener noreferrer"
