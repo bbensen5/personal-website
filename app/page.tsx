@@ -6,8 +6,6 @@ const sectionClass =
   "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
 const aboutSectionClass =
   "scroll-mt-24 bg-background px-6 pt-20 pb-10 text-foreground sm:px-10 lg:pt-24 lg:pb-12";
-const skillsSectionClass =
-  "scroll-mt-24 bg-background px-6 pt-10 pb-20 text-foreground sm:px-10 lg:pt-12 lg:pb-24";
 const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
   "font-[family-name:var(--font-display)] text-left text-3xl font-bold tracking-tight text-highlight sm:text-4xl";
@@ -192,7 +190,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      <section id="skills" className={skillsSectionClass}>
+      <section id="skills" className={sectionClass}>
         <ScrollReveal className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Skills</h2>

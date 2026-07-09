@@ -24,7 +24,7 @@ export function Navbar() {
     const startY = window.scrollY
     const targetY = startY + section.getBoundingClientRect().top
     const distance = targetY - startY
-    const duration = 650
+    const duration = 320
     let startTime: number | null = null
 
     const easeInOut = (progress: number) =>

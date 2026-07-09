@@ -32,7 +32,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       setSelectedProject(null);
       setIsClosing(false);
       closeTimerRef.current = null;
-    }, 700);
+    }, 300);
   }, [isClosing]);
 
   const finishClosing = useCallback(() => {
@@ -77,7 +77,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <button
             key={project.title}
             type="button"
-            className="group flex transform-gpu cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-2 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:-translate-y-2 active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
+            className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[border-color,box-shadow] duration-300 ease-out hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
             onClick={() => {
               if (closeTimerRef.current) {
                 window.clearTimeout(closeTimerRef.current);
@@ -122,7 +122,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <div
             className={`fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm motion-reduce:animate-none sm:p-8 ${
               isClosing
-                ? "animate-[project-backdrop-out_520ms_ease-in_both]"
+                ? "animate-[project-backdrop-out_260ms_ease-in_both]"
                 : "animate-[project-backdrop-in_180ms_ease-out_both]"
             }`}
             role="presentation"
@@ -136,7 +136,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
               aria-labelledby="project-dialog-title"
               className={`relative max-h-[90vh] w-full max-w-3xl origin-center overflow-y-auto rounded-lg border border-highlight/45 bg-offset shadow-[0_0_40px_rgba(131,154,255,0.2)] motion-reduce:animate-none ${
                 isClosing
-                  ? "animate-[project-dialog-out_520ms_cubic-bezier(0.7,0,0.84,0)_both]"
+                  ? "animate-[project-dialog-out_260ms_cubic-bezier(0.7,0,0.84,0)_both]"
                   : "animate-[project-dialog-in_260ms_cubic-bezier(0.16,1,0.3,1)_both]"
               }`}
               onAnimationEnd={(event) => {
