@@ -45,7 +45,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <button
             key={project.title}
             type="button"
-            className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
+            className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[border-color,box-shadow,transform] duration-500 ease-out will-change-transform hover:-translate-y-2 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:-translate-y-2 active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
             onClick={() => setSelectedProject(project)}
             aria-label={`View details for ${project.title}`}
           >
@@ -82,7 +82,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       {selectedProject &&
         createPortal(
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm sm:p-8"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm animate-[project-backdrop-in_180ms_ease-out_both] motion-reduce:animate-none sm:p-8"
             role="presentation"
             onMouseDown={(event) => {
               if (event.target === event.currentTarget) setSelectedProject(null);
@@ -92,7 +92,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-dialog-title"
-              className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-lg border border-highlight/45 bg-offset shadow-[0_0_40px_rgba(131,154,255,0.2)]"
+              className="relative max-h-[90vh] w-full max-w-3xl origin-center overflow-y-auto rounded-lg border border-highlight/45 bg-offset shadow-[0_0_40px_rgba(131,154,255,0.2)] animate-[project-dialog-in_260ms_cubic-bezier(0.16,1,0.3,1)_both] motion-reduce:animate-none"
             >
               <button
                 type="button"
