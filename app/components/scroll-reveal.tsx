@@ -22,12 +22,9 @@ export function ScrollReveal({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.12 },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
     );
 
     observer.observe(element);
@@ -38,7 +35,7 @@ export function ScrollReveal({
     <div
       ref={elementRef}
       className={`${className} transform-gpu transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >

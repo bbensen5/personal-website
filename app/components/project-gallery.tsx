@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 export type Project = {
@@ -20,12 +20,38 @@ type ProjectGalleryProps = {
 
 export function ProjectGallery({ projects }: ProjectGalleryProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const closeTimerRef = useRef<number | null>(null);
+
+  const closeProject = useCallback(() => {
+    if (isClosing) return;
+
+    setIsClosing(true);
+
+    closeTimerRef.current = window.setTimeout(() => {
+      setSelectedProject(null);
+      setIsClosing(false);
+      closeTimerRef.current = null;
+    }, 700);
+  }, [isClosing]);
+
+  const finishClosing = useCallback(() => {
+    if (!isClosing) return;
+
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
+    setSelectedProject(null);
+    setIsClosing(false);
+  }, [isClosing]);
 
   useEffect(() => {
     if (!selectedProject) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelectedProject(null);
+      if (event.key === "Escape") closeProject();
     };
 
     const previousOverflow = document.body.style.overflow;
@@ -36,7 +62,13 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedProject]);
+  }, [closeProject, selectedProject]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+    };
+  }, []);
 
   return (
     <>
@@ -45,8 +77,15 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <button
             key={project.title}
             type="button"
-            className="group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[border-color,box-shadow,transform] duration-500 ease-out will-change-transform hover:-translate-y-2 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:-translate-y-2 active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
-            onClick={() => setSelectedProject(project)}
+            className="group flex transform-gpu cursor-pointer flex-col overflow-hidden rounded-lg border border-foreground/15 bg-offset text-left transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-2 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.16)] active:-translate-y-2 active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.16)]"
+            onClick={() => {
+              if (closeTimerRef.current) {
+                window.clearTimeout(closeTimerRef.current);
+                closeTimerRef.current = null;
+              }
+              setIsClosing(false);
+              setSelectedProject(project);
+            }}
             aria-label={`View details for ${project.title}`}
           >
             <div className="flex h-48 items-center justify-center overflow-hidden bg-background">
@@ -63,7 +102,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
               <p className="text-sm font-light leading-6 text-foreground/80">
                 {project.description}
               </p>
-              <div className="mt-auto flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -81,22 +120,33 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       {selectedProject &&
         createPortal(
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm animate-[project-backdrop-in_180ms_ease-out_both] motion-reduce:animate-none sm:p-8"
+            className={`fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm motion-reduce:animate-none sm:p-8 ${
+              isClosing
+                ? "animate-[project-backdrop-out_520ms_ease-in_both]"
+                : "animate-[project-backdrop-in_180ms_ease-out_both]"
+            }`}
             role="presentation"
             onMouseDown={(event) => {
-              if (event.target === event.currentTarget) setSelectedProject(null);
+              if (event.target === event.currentTarget) closeProject();
             }}
           >
             <article
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-dialog-title"
-              className="relative max-h-[90vh] w-full max-w-3xl origin-center overflow-y-auto rounded-lg border border-highlight/45 bg-offset shadow-[0_0_40px_rgba(131,154,255,0.2)] animate-[project-dialog-in_260ms_cubic-bezier(0.16,1,0.3,1)_both] motion-reduce:animate-none"
+              className={`relative max-h-[90vh] w-full max-w-3xl origin-center overflow-y-auto rounded-lg border border-highlight/45 bg-offset shadow-[0_0_40px_rgba(131,154,255,0.2)] motion-reduce:animate-none ${
+                isClosing
+                  ? "animate-[project-dialog-out_520ms_cubic-bezier(0.7,0,0.84,0)_both]"
+                  : "animate-[project-dialog-in_260ms_cubic-bezier(0.16,1,0.3,1)_both]"
+              }`}
+              onAnimationEnd={(event) => {
+                if (event.currentTarget === event.target) finishClosing();
+              }}
             >
               <button
                 type="button"
                 className="absolute top-3 right-3 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-foreground/20 bg-background/90 text-2xl leading-none text-foreground transition-colors hover:border-highlight hover:text-highlight active:border-highlight active:text-highlight"
-                onClick={() => setSelectedProject(null)}
+                onClick={closeProject}
                 aria-label="Close project details"
               >
                 &times;
