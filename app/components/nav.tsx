@@ -10,7 +10,6 @@ const navItems = [
   { href: '/#projects', name: 'Projects' },
   { href: '/#experience', name: 'Experience' },
   { href: '/#contact', name: 'Contact' },
-  { href: '/blog', name: 'Blog' },
 ]
 
 export function Navbar() {

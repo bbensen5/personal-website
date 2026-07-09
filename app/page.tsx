@@ -39,35 +39,27 @@ const projects: Project[] = [
   {
     title: "Air Pollution and Electric Vehicles",
     image: "/ev-proj-thumbnail.png",
-    alt: "Abstract liquid metal project preview",
+    alt: "Air pollution and EVs project preview",
     description:
       "A research project analyzing how EV sales, GDP, and other factors relate to air pollution and CO2 emissions across countries.",
     details:
-      "This project compares country-level electric vehicle, economic, and emissions data to explore patterns connected to air pollution and CO2 output.",
+      "I combined multiple data sets from countries around the globe to see how electric vehicles have impacted the world and carbon emissions. I created many kinds of graphs relating to different aspects of countries to see how EVs sales and CO2 emissions have changed over time, across countries, relative to population and GDP, and more.",
     learned:
-      "I practiced collecting and cleaning data from multiple sources, joining geographic datasets, and communicating patterns through maps and visualizations.",
+      "For this project, I focused on finding relevant data sets and naturalizing them. I also used webscraping to extract data when downloading wasn't an option, but the main thing I learned was the importance of finding the best method of visualizing data to help answer your specific question.",
     tags: ["Python", "Pandas", "GeoPandas", "Matplotlib", "BeautifulSoup"],
   },
   {
     title: "Personal Portfolio Website",
     image: "/website-thumbnail.png",
-    alt: "Portfolio project preview icon",
+    alt: "Portfolio project preview",
     description:
       "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
     details:
-      "A responsive personal portfolio designed and built to present my background, technical skills, projects, experience, and ways to connect.",
+      "This site is a portfolio of everything you need to know about me, from my education, past projects, skills, and interests. Built with Next.js and Tailwind CSS, this website reflects who I am as a person, student, and programmer.",
     learned:
-      "I learned how to structure a Next.js site, build responsive layouts with Tailwind CSS, manage reusable UI patterns, and deploy updates with Vercel.",
+      "I learned how to design a professional website layout with a clean UI, while deploying with Vercel.",
     tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
   },
-  // {
-  //   title: "Coursework Projects",
-  //   image: "/globe.svg",
-  //   alt: "Coursework project preview icon",
-  //   description:
-  //     "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
-  //   tags: ["Java", "Python", "Data structures", "Systems"],
-  // },
 ];
 
 export default function Home() {

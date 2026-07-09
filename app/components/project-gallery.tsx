@@ -73,7 +73,6 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
                   </span>
                 ))}
               </div>
-              <span className="text-sm font-medium text-highlight">View details</span>
             </div>
           </button>
         ))}
