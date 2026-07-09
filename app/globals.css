@@ -10,7 +10,7 @@
 
 [data-theme="light"] {
   --background: #f6f2ee;
-  --foreground: #171320;
+  --foreground: #100d22;
   --highlight: #839aff;
   --offset: #ffffff;
   --hero-background: url("/liquid-metal-mirror.png");
@@ -19,7 +19,7 @@
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
     --background: #f6f2ee;
-    --foreground: #171320;
+    --foreground: #100d22;
     --highlight: #839aff;
     --offset: #ffffff;
     --hero-background: url("/liquid-metal-mirror.png");
