@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${unbounded.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${unbounded.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <main className="flex-auto min-w-0 flex flex-col">

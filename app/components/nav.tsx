@@ -1,7 +1,6 @@
 'use client'
 
-import Link from 'next/link'
-import { useState } from 'react'
+import { MouseEvent, useRef, useState } from 'react'
 
 const navItems = [
   { href: '/#top', name: 'Home' },
@@ -10,11 +9,61 @@ const navItems = [
   { href: '/#projects', name: 'Projects' },
   { href: '/#experience', name: 'Experience' },
   { href: '/#contact', name: 'Contact' },
-  { href: '/blog', name: 'Blog' },
 ]
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const scrollFrameRef = useRef<number | null>(null)
+
+  const scrollToSection = (section: HTMLElement) => {
+    if (scrollFrameRef.current) {
+      window.cancelAnimationFrame(scrollFrameRef.current)
+      scrollFrameRef.current = null
+    }
+
+    const startY = window.scrollY
+    const targetY = startY + section.getBoundingClientRect().top
+    const distance = targetY - startY
+    const duration = 320
+    let startTime: number | null = null
+
+    const easeInOut = (progress: number) =>
+      progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2
+
+    const step = (currentTime: number) => {
+      startTime ??= currentTime
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+
+      window.scrollTo(0, startY + distance * easeInOut(progress))
+
+      if (progress < 1) {
+        scrollFrameRef.current = window.requestAnimationFrame(step)
+      } else {
+        scrollFrameRef.current = null
+      }
+    }
+
+    scrollFrameRef.current = window.requestAnimationFrame(step)
+  }
+
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    const sectionId = href.split('#')[1]
+    const section = sectionId ? document.getElementById(sectionId) : null
+
+    if (section) {
+      event.preventDefault()
+      scrollToSection(section)
+      window.history.pushState(null, '', href)
+    }
+
+    setIsOpen(false)
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-foreground/10 bg-background/95 backdrop-blur-sm">
@@ -37,13 +86,14 @@ export function Navbar() {
 
         <div className="hidden flex-row flex-wrap items-center justify-center gap-1 sm:flex">
           {navItems.map(({ href, name }) => (
-            <Link
+            <a
               key={href}
               href={href}
               className="relative m-1 flex items-center px-3 py-0.5 transition-all hover:text-highlight active:text-highlight"
+              onClick={(event) => handleNavClick(event, href)}
             >
               {name}
-            </Link>
+            </a>
           ))}
         </div>
       </nav>
@@ -58,14 +108,14 @@ export function Navbar() {
       >
         <div className="flex flex-col p-3">
           {navItems.map(({ href, name }) => (
-            <Link
+            <a
               key={href}
               href={href}
               className="px-6 py-3 text-center transition-colors hover:text-highlight active:text-highlight"
-              onClick={() => setIsOpen(false)}
+              onClick={(event) => handleNavClick(event, href)}
             >
               {name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

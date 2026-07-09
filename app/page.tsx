@@ -1,17 +1,17 @@
 import Image from "next/image";
+import { ProjectGallery, type Project } from "./components/project-gallery";
+import { ScrollReveal } from "./components/scroll-reveal";
 
 const sectionClass =
   "scroll-mt-24 bg-background px-6 py-20 text-foreground sm:px-10 lg:py-24";
 const aboutSectionClass =
   "scroll-mt-24 bg-background px-6 pt-20 pb-10 text-foreground sm:px-10 lg:pt-24 lg:pb-12";
-const skillsSectionClass =
-  "scroll-mt-24 bg-background px-6 pt-10 pb-20 text-foreground sm:px-10 lg:pt-12 lg:pb-24";
 const containerClass = "mx-auto flex w-full max-w-6xl flex-col";
 const headingClass =
   "font-[family-name:var(--font-display)] text-left text-3xl font-bold tracking-tight text-highlight sm:text-4xl";
 const subtitleClass = "max-w-2xl text-sm font-light leading-6 text-foreground/65";
 const cardClass =
-  "rounded-lg border border-foreground/15 bg-offset p-6 transition-colors hover:border-highlight active:border-highlight";
+  "rounded-lg border border-foreground/15 bg-offset p-6 transition-[border-color,box-shadow] duration-300 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.14)] active:border-highlight active:shadow-[0_0_24px_rgba(131,154,255,0.14)]";
 
 const skills = [
   { name: "Java", logo: "/java-logo.svg" },
@@ -30,34 +30,33 @@ const skills = [
   { name: "BeautifulSoup", logo: "/beautifulsoup-logo.png" },
   // { name: "AI tools", logo: "/ai-tools-logo.svg" },
   { name: "Data visualization", logo: "/data-visualization-logo.svg" },
-  // { name: "Math", logo: "/math-logo.svg" },
 ];
 
-const projects = [
+const projects: Project[] = [
   {
     title: "Air Pollution and Electric Vehicles",
     image: "/ev-proj-thumbnail.png",
-    alt: "Abstract liquid metal project preview",
+    alt: "Air pollution and EVs project preview",
     description:
       "A research project analyzing how EV sales, GDP, and other factors relate to air pollution and CO2 emissions across countries.",
+    details:
+      "I combined multiple data sets from countries around the globe to see how electric vehicles have impacted the world and carbon emissions. I created many kinds of graphs relating to different aspects of countries to see how EVs sales and CO2 emissions have changed over time, across countries, relative to population and GDP, and more.",
+    learned:
+      "For this project, I focused on finding relevant data sets and naturalizing them. I also used webscraping to extract data when downloading wasn't an option, but the main thing I learned was the importance of finding the best method of visualizing data to help answer your specific question.",
     tags: ["Python", "Pandas", "GeoPandas", "Matplotlib", "BeautifulSoup"],
   },
   {
     title: "Personal Portfolio Website",
     image: "/website-thumbnail.png",
-    alt: "Portfolio project preview icon",
+    alt: "Portfolio project preview",
     description:
       "This site, built with Next.js and Tailwind CSS to showcase my education, projects, skills, and professional interests.",
+    details:
+      "This site is a portfolio of everything you need to know about me, from my education, past projects, skills, and interests. Built with Next.js and Tailwind CSS, this website reflects who I am as a person, student, and programmer.",
+    learned:
+      "I learned how to design a professional website layout with a clean UI, while deploying with Vercel.",
     tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
   },
-  // {
-  //   title: "Coursework Projects",
-  //   image: "/globe.svg",
-  //   alt: "Coursework project preview icon",
-  //   description:
-  //     "A space for class projects, labs, and programming assignments that show my growth in CS fundamentals.",
-  //   tags: ["Java", "Python", "Data structures", "Systems"],
-  // },
 ];
 
 export default function Home() {
@@ -145,7 +144,7 @@ export default function Home() {
       </main>
 
       <section id="about" className={aboutSectionClass}>
-        <div className={`${containerClass}`}>
+        <ScrollReveal className={containerClass}>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-3">
@@ -187,11 +186,11 @@ export default function Home() {
               </dl>
             </article>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
-      <section id="skills" className={skillsSectionClass}>
-        <div className={`${containerClass} gap-10`}>
+      <section id="skills" className={sectionClass}>
+        <ScrollReveal className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Skills</h2>
             <p className={subtitleClass}>Tools and technologies that I have learned over the years</p>
@@ -200,7 +199,7 @@ export default function Home() {
             {skills.map((skill) => (
               <article
                 key={skill.name}
-                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-2 text-center transition-colors hover:border-highlight active:border-highlight sm:gap-3 sm:p-4"
+                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-foreground/15 bg-offset p-2 text-center transition-[border-color,box-shadow] duration-300 hover:border-highlight hover:shadow-[0_0_20px_rgba(131,154,255,0.14)] active:border-highlight active:shadow-[0_0_20px_rgba(131,154,255,0.14)] sm:gap-3 sm:p-4"
               >
                 <div
                   className={`flex items-center justify-center ${
@@ -225,51 +224,21 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <section id="projects" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
+        <ScrollReveal className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Projects</h2>
             <p className={subtitleClass}>Academic and personal projects I have done</p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article key={project.title} className={`${cardClass} overflow-hidden p-0`}>
-                <div className="flex h-48 items-center justify-center bg-background">
-                  <Image
-                    src={project.image}
-                    alt={project.alt}
-                    width={520}
-                    height={320}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col gap-4 p-6">
-                  <h3 className="text-xl font-medium">{project.title}</h3>
-                  <p className="text-sm font-light leading-6 text-foreground/80">
-                    {project.description}
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-background px-3 py-1 text-xs text-foreground/80"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
+          <ProjectGallery projects={projects} />
+        </ScrollReveal>
       </section>
 
       <section id="experience" className={sectionClass}>
-        <div className={`${containerClass} gap-10`}>
+        <ScrollReveal className={`${containerClass} gap-10`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Experience</h2>
             <p className={subtitleClass}>Where I&apos;ve been in the past</p>
@@ -309,18 +278,18 @@ export default function Home() {
               </div>
             </article>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <section id="contact" className={sectionClass}>
-        <div className={`${containerClass} gap-8`}>
+        <ScrollReveal className={`${containerClass} gap-8`}>
           <div className="flex flex-col gap-3">
             <h2 className={headingClass}>Contact</h2>
             <p className={subtitleClass}>I&apos;m open to internships, learning opportunities, collaborations, or just chatting.</p>
           </div>
           <div className="grid gap-6 lg:grid-cols-[1.45fr_0.65fr]">
             <form
-              className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+              className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-[border-color,box-shadow] duration-300 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.14)]"
               action="mailto:bianca06162007@gmail.com"
               method="post"
               encType="text/plain"
@@ -369,7 +338,7 @@ export default function Home() {
                 Send Message
               </button>
             </form>
-            <aside className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+            <aside className="flex min-w-0 flex-col gap-5 rounded-lg border border-foreground/15 bg-offset p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-[border-color,box-shadow] duration-300 hover:border-highlight hover:shadow-[0_0_24px_rgba(131,154,255,0.14)]">
               <div>
                 <h3 className="mt-2 text-xl font-medium text-highlight">
                   Other ways to connect
@@ -432,7 +401,7 @@ export default function Home() {
               </div>
             </aside>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <footer className="border-t border-foreground/10 bg-background px-6 py-8 text-foreground/65 sm:px-10">

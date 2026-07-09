@@ -1,12 +1,7 @@
-// import { getBlogPosts } from 'app/blog/utils'
 
 export const baseUrl = 'https://biancabensen.vercel.app'
 
 export default async function sitemap() {
-  // let blogs = getBlogPosts().map((post) => ({
-  //   url: `${baseUrl}/blog/${post.slug}`,
-  //   lastModified: post.metadata.publishedAt,
-  // }))
 
   const routes = ['', '/blog'].map((route) => ({
     url: `${baseUrl}${route}`,
