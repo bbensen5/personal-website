@@ -65,7 +65,7 @@ export default function Home() {
       <main
         id="top"
         className="flex min-h-screen bg-cover bg-center px-6 pt-28 pb-16 sm:px-10 lg:pt-24"
-        style={{ backgroundImage: "url(/liquid-metal-dark-mirror.png)" }}
+        style={{ backgroundImage: "var(--hero-background)" }}
       >
         <section className="mx-auto flex w-full max-w-7xl -translate-y-4 flex-col-reverse items-center justify-center gap-10 sm:flex-row-reverse sm:items-center lg:-translate-y-8 lg:gap-16">
           <div className="flex flex-col items-center gap-5">

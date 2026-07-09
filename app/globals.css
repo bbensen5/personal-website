@@ -3,10 +3,30 @@
 :root {
   --background: #100d22;
   --foreground: #ffffff;
-  /* --highlight: #7d96ff; */
   --highlight: #839aff;
   --offset: #1c1c36;
   --accent1: #465694;
+  --hero-background: url("/liquid-metal-dark-mirror.png");
+}
+
+[data-theme="light"] {
+  --background: #f6f2ee;
+  --foreground: #171320;
+  --highlight: #465694;
+  --offset: #ffffff;
+  --accent1: #839aff;
+  --hero-background: url("/liquid-metal-mirror.png");
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --background: #f6f2ee;
+    --foreground: #171320;
+    --highlight: #465694;
+    --offset: #ffffff;
+    --accent1: #839aff;
+    --hero-background: url("/liquid-metal-mirror.png");
+  }
 }
 
 @theme inline {
