@@ -30,7 +30,6 @@ const skills = [
   { name: "BeautifulSoup", logo: "/beautifulsoup-logo.png" },
   // { name: "AI tools", logo: "/ai-tools-logo.svg" },
   { name: "Data visualization", logo: "/data-visualization-logo.svg" },
-  // { name: "Math", logo: "/math-logo.svg" },
 ];
 
 const projects: Project[] = [
