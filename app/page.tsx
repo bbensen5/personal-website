@@ -206,12 +206,13 @@ export default function Home() {
                     skill.name === "BeautifulSoup" ? "h-16 w-16" : "h-12 w-12"
                   }`}
                 >
-                  <Image
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    width={skill.name === "BeautifulSoup" ? 64 : 56}
-                    height={skill.name === "BeautifulSoup" ? 64 : 56}
-                    className="h-full w-full object-contain brightness-0 invert"
+                  <span
+                    className="h-full w-full bg-foreground"
+                    style={{
+                      WebkitMask: `url(${skill.logo}) center / contain no-repeat`,
+                      mask: `url(${skill.logo}) center / contain no-repeat`,
+                    }}
+                    aria-hidden="true"
                   />
                 </div>
                 <h3
