@@ -24,20 +24,17 @@ export function Navbar() {
     const startY = window.scrollY
     const targetY = startY + section.getBoundingClientRect().top
     const distance = targetY - startY
-    const duration = 320
+    const duration = 180
     let startTime: number | null = null
 
-    const easeInOut = (progress: number) =>
-      progress < 0.5
-        ? 4 * progress * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2
+    const easeOut = (progress: number) => 1 - Math.pow(1 - progress, 3)
 
     const step = (currentTime: number) => {
       startTime ??= currentTime
       const elapsed = currentTime - startTime
       const progress = Math.min(elapsed / duration, 1)
 
-      window.scrollTo(0, startY + distance * easeInOut(progress))
+      window.scrollTo(0, startY + distance * easeOut(progress))
 
       if (progress < 1) {
         scrollFrameRef.current = window.requestAnimationFrame(step)
