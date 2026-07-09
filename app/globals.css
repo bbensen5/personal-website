@@ -5,16 +5,14 @@
   --foreground: #ffffff;
   --highlight: #839aff;
   --offset: #1c1c36;
-  --accent1: #465694;
   --hero-background: url("/liquid-metal-dark-mirror.png");
 }
 
 [data-theme="light"] {
   --background: #f6f2ee;
   --foreground: #171320;
-  --highlight: #465694;
+  --highlight: #839aff;
   --offset: #ffffff;
-  --accent1: #839aff;
   --hero-background: url("/liquid-metal-mirror.png");
 }
 
@@ -22,9 +20,8 @@
   :root:not([data-theme]) {
     --background: #f6f2ee;
     --foreground: #171320;
-    --highlight: #465694;
+    --highlight: #839aff;
     --offset: #ffffff;
-    --accent1: #839aff;
     --hero-background: url("/liquid-metal-mirror.png");
   }
 }
